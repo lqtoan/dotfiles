@@ -142,7 +142,7 @@ layout_conf = {
     "border_focus":"81A1C1",
     "border_normal": "404552", 
     "border_width": 3, 
-    "margin": 5
+    "margin": 3
 }
 
 layouts = [
@@ -196,11 +196,11 @@ screens = [
                 widget.Clock(format='| %a, %B %d | %I:%M %p'),
                 # widget.QuickExit(),
             ],
-            24, margin = [0, 0, 8, 0],
+            24, margin = [0, 0, 6, 0],
         ),
-        bottom=bar.Gap(5),
-        left=bar.Gap(5),
-        right=bar.Gap(5),
+        bottom=bar.Gap(3),
+        left=bar.Gap(3),
+        right=bar.Gap(3),
     ),
 ]
 
