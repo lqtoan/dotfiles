@@ -118,7 +118,7 @@ keys = [
     # Take a screenshot
     Key(
         [], "Print",
-        lazy.spawn("scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")
+        lazy.spawn("scrot '%y-%m-%d-%H-%M_screenshot.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")
     ),
 ]
 
@@ -149,7 +149,6 @@ layouts = [
     layout.Columns(**layout_conf),
     layout.Floating(**layout_conf),
     # layout.Max(),
-    # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
@@ -177,13 +176,9 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.GroupBox(active = ["#E5E9F0"],
                     inactive = ["#7c818c"],
-                    # highlight_color = ["#ff0000"],
-                    # highlight_method = "line",
+                    highlight_method = "line",
+                    highlight_color = ["#4b5162"],
                     this_current_screen_border = ["#81A1C1"],
-                    # this_screen_border = ["#ff0000"],
-                    # other_current_screen_border = ["#ff0000"],
-                    # other_screen_border = [4],
-
                 ),
                 widget.Prompt(),
                 widget.WindowName(),
