@@ -142,7 +142,7 @@ layout_conf = {
     "border_focus":"81A1C1",
     "border_normal": "404552", 
     "border_width": 3, 
-    "margin": 3
+    "margin": 4
 }
 
 layouts = [
@@ -162,10 +162,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='DejaVu Sans',
-    fontsize=12,
-    padding=3,
-    background =["#383c4a"],
+    font = "DejaVu Sans",
+    fontsize = 12,
+    padding = 5,
+    background = ["#383c4a"],
 )
 extension_defaults = widget_defaults.copy()
 
@@ -174,7 +174,9 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(scale=0.5),
-                widget.GroupBox(active = ["#E5E9F0"],
+                widget.GroupBox(
+                    padding = 2,
+                    active = ["#E5E9F0"],
                     inactive = ["#7c818c"],
                     highlight_method = "line",
                     highlight_color = ["#4b5162"],
@@ -190,17 +192,17 @@ screens = [
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
+                widget.Systray(background=["#4b5162"]),
                 widget.Volume(),
-                widget.Battery(),
-                widget.Clock(format='| %a, %B %d | %I:%M %p'),
+                widget.Battery(background=["#4b5162"]),
+                widget.Clock(format='%a, %B %d | %I:%M %p'),
                 # widget.QuickExit(),
             ],
-            24, margin = [0, 0, 6, 0],
+            24, margin = [0, 0, 4, 0],
         ),
-        bottom=bar.Gap(3),
-        left=bar.Gap(3),
-        right=bar.Gap(3),
+        bottom=bar.Gap(4),
+        left=bar.Gap(4),
+        right=bar.Gap(4),
     ),
 ]
 

@@ -2,6 +2,10 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'scrooloose/nerdtree' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/autocomplpop'
+Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 "-------------------------------------------------------------------------------------
@@ -11,6 +15,13 @@ filetype plugin indent on
 
 autocmd BufEnter * :set scroll=10 
 syntax on
+
+set ruler
+set number
+
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
 
 set encoding=UTF-8
 set mouse=a 
