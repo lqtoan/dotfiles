@@ -34,7 +34,7 @@ from libqtile.lazy import lazy
 
 
 mod = "mod4"
-terminal = "xfce4-terminal"
+terminal = "kitty"
 browser = "microsoft-edge-beta"
 thunar = "thunar"
 nitrogen = "nitrogen"
@@ -192,10 +192,10 @@ screens = [
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(background=["#4b5162"]),
-                widget.Volume(),
-                widget.Battery(background=["#4b5162"]),
-                widget.Clock(format='%a, %B %d | %I:%M %p'),
+                widget.Systray(),
+                widget.Volume(background=["#4b5162"]),
+                widget.Battery(),
+                widget.Clock(background=["#4b5162"], format='%a, %B %d | %I:%M %p'),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 4, 0],
