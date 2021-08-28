@@ -7,12 +7,21 @@
 # local ret_status="%(?:%{$fg[green]%}➜:%{$fg[red]%}➜)"
 
 # PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
-PROMPT='%{$fg[cyan]%*%} %{$fg[yellow]%~:%} 
-%(?.%{$fg[green]%}✔.%{$fg[red]%}✗) %{$reset_color%}'
-# ZSH_THEME_GIT_PROMPT_CLEAN=") %{$fg[green]%}✔ "
-# ZSH_THEME_GIT_PROMPT_DIRTY=") %{$fg[red]%}✗ "
-# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}("
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '  (%b)'
+zstyle ':vcs_info:*' enable git cvs svn
+
+precmd() { vcs_info }
+
+# setopt PROMPT_SUBST
+PROMPT=' %{$fg_bold[yellow] %~%} %{$fg[magenta]${vcs_info_msg_0_}%}
+%(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
+# ZSH_THEME_GIT_PROMPT_CLEAN=") %{$fg_bold[green]%}✔ "
+# ZSH_THEME_GIT_PROMPT_DIRTY=") %{$fg_bold[yellow]%}✗ "
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}("
 # ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
 
 # export PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
 
@@ -100,7 +109,7 @@ export ZSH="/home/toan/.oh-my-zsh"
 plugins=(git zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/.fonts/*.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -127,14 +136,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
+alias vi='nvim'
 alias nv='nvim'
 alias nvi='nvim'
-
 alias zsh='nvim .zshrc'
 alias qt='nvim .config/qtile/config.py'
 alias kt='nvim .config/kitty/kitty.conf'
 alias ktt='nvim .config/kitty/theme.conf'
-
 alias pgg='ping 8.8.8.8'
 alias pa='pavucontrol'
 alias pacc='paccache -rk0'
