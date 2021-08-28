@@ -139,9 +139,9 @@ for i in groups:
     ])
 
 layout_conf = { 
-    "border_focus":"81A1C1",
-    "border_normal": "404552", 
-    "border_width": 3, 
+        "border_focus":"#88c0d0",
+    "border_normal": "#282c34", 
+    "border_width": 2, 
     "margin": 4
 }
 
@@ -165,7 +165,7 @@ widget_defaults = dict(
     font = "DejaVu Sans",
     fontsize = 12,
     padding = 5,
-    background = ["#383c4a"],
+    background = ["#282c34"]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -193,9 +193,9 @@ screens = [
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
-                widget.Volume(background=["#4b5162"]),
+                widget.Volume(),
                 widget.Battery(),
-                widget.Clock(background=["#4b5162"], format='%a, %B %d | %I:%M %p'),
+                widget.Clock(format='%a, %B %d | %I:%M %p'),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 4, 0],

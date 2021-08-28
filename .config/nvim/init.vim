@@ -1,8 +1,8 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'scrooloose/nerdtree' 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/autocomplpop'
+Plug 'jiangmiao/auto-pairs' 
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
@@ -15,6 +15,8 @@ filetype plugin indent on
 
 autocmd BufEnter * :set scroll=10 
 syntax on
+
+set autowrite
 
 set ruler
 set number
@@ -33,6 +35,8 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 
+set laststatus=2
+
 "--------------------------------------------------------------------------------------
 "NERDTree
 map <C-b> :NERDTreeToggle<CR>
@@ -49,9 +53,22 @@ let NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
 
 "Theme
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo', 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }
 colorscheme onedark
-let g:lightline = { 'colorscheme': 'onedark' }
-let g:airline_theme = 'onedark'
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >

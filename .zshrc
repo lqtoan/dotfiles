@@ -1,9 +1,21 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+# local ret_status="%(?:%{$fg[green]%}➜:%{$fg[red]%}➜)"
+
+# PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
+PROMPT='%{$fg[cyan]%*%} %{$fg[yellow]%~:%} 
+%(?.%{$fg[green]%}✔.%{$fg[red]%}✗) %{$reset_color%}'
+# ZSH_THEME_GIT_PROMPT_CLEAN=") %{$fg[green]%}✔ "
+# ZSH_THEME_GIT_PROMPT_DIRTY=") %{$fg[red]%}✗ "
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}("
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
+# export PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -23,7 +35,7 @@ export ZSH="/home/toan/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,9 +126,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim='nvim'
+alias nv='nvim'
+alias nvi='nvim'
 
+alias zsh='nvim .zshrc'
+alias qt='nvim .config/qtile/config.py'
+alias kt='nvim .config/kitty/kitty.conf'
+alias ktt='nvim .config/kitty/theme.conf'
+
+alias pgg='ping 8.8.8.8'
+alias pa='pavucontrol'
+alias pacc='paccache -rk0'
+alias pacs='sudo pacman -Suy'
+alias yays='yay -Suy'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # (cat ~/.cache/wal/sequences &)
 clear
