@@ -38,10 +38,11 @@ terminal = "kitty"
 browser = "microsoft-edge-beta"
 thunar = "thunar"
 nitrogen = "nitrogen"
-# record = "simplescreenrecorder"
+record = "simplescreenrecorder"
 spotify = "spotify"
 kdeconnect = "kdeconnect-app"
 sublime = "subl"
+qutebrowser = "qutebrowser"
 
 keys = [
     # Switch between windows
@@ -85,10 +86,11 @@ keys = [
     Key([mod], "f", lazy.spawn(terminal + " -e ranger"), desc="Launch ranger"),
     Key([mod], "n", lazy.spawn(nitrogen), desc="Launch nitrogen"),
     Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
-    # Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
+    Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "k", lazy.spawn(kdeconnect), desc="Launch kde connect"),
     Key([mod], "t", lazy.spawn(thunar), desc="Launch thunar"),
     Key([mod], "c", lazy.spawn(sublime), desc="Launch sublime"),
+    Key([mod], "q", lazy.spawn(qutebrowser), desc="Launch qutebrowser"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),

@@ -11,6 +11,6 @@
 - Kdeconnect
 - ...
 
-![21-08-27-12-00_screenshot](https://user-images.githubusercontent.com/89382043/131079362-a2f3bbaf-04ad-40c8-b8ce-31a99033ac84.jpg)
+![21-08-28-20-57_screenshot](https://user-images.githubusercontent.com/89382043/131220315-10d215a1-3759-42bd-9ee9-170bdf51d892.jpg)
 
 

@@ -139,17 +139,25 @@ alias vim='nvim'
 alias vi='nvim'
 alias nv='nvim'
 alias nvi='nvim'
+alias nvcf='nvim .config/nvim/init.vim'
 alias zsh='nvim .zshrc'
 alias qt='nvim .config/qtile/config.py'
 alias kt='nvim .config/kitty/kitty.conf'
 alias ktt='nvim .config/kitty/theme.conf'
+alias xpf='nvim .xprofile'
 alias pgg='ping 8.8.8.8'
 alias pa='pavucontrol'
 alias pacc='paccache -rk0'
 alias pacs='sudo pacman -Suy'
 alias yays='yay -Suy'
+alias cls='colorscript -r'
+alias cls10='colorscript -e 10'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # (cat ~/.cache/wal/sequences &)
 clear
+export GTK_IM_MODULE=ibus
+export XMODIFIER=@im-ibus
+export QT_IM_MODULE=ibus
+pidof ibus-daemon > /dev/null || ibus-daemon -drx
