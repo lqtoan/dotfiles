@@ -29,7 +29,7 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-
+from libqtile import qtile
 # from libqtile.utils import guess_terminal
 
 
@@ -124,7 +124,7 @@ keys = [
     ),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "1234567890"]
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
@@ -166,7 +166,7 @@ layouts = [
 widget_defaults = dict(
     font = "DejaVu Sans",
     fontsize = 12,
-    padding = 5,
+    padding = 3,
     background = ["#282c34"]
 )
 extension_defaults = widget_defaults.copy()
@@ -177,15 +177,14 @@ screens = [
             [
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.GroupBox(
-                    padding = 2,
                     active = ["#E5E9F0"],
                     inactive = ["#7c818c"],
-                    highlight_method = "line",
+                    highlight_method = "block",
                     highlight_color = ["#4b5162"],
-                    this_current_screen_border = ["#81A1C1"],
+                    this_current_screen_border = ["#4b5162"],
                 ),
                 widget.Prompt(),
-                widget.WindowName(),
+                # widget.WindowName(format='{state}', max_chars=10),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -194,10 +193,38 @@ screens = [
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Volume(),
-                widget.Battery(),
-                widget.Clock(format='%a, %B %d | %I:%M %p'),
+                widget.Spacer(),
+                widget.Mpris2(
+                    name='spotify',
+                    objname='org.mpris.MediaPlayer2.spotify',
+                    display_metadata=['xesam:title', 'xesam:artist'],
+                    scroll_interval=0,
+                    scroll_wait_intervals=10000,
+                    scroll_chars=30,
+                    foreground='#c678dd',
+                ),
+                widget.TextBox(
+                    text='hello',
+                    foreground='#c678dd',
+                    mouse_callbacks={
+                        'Button1': lambda: qtile.cmd_spawn('playerctl next')
+                        }
+                    ),
+                widget.TextBox(text='CPU:', foreground='#e06c75'),
+                widget.CPU(
+                    foreground='#e06c75', 
+                    format='{freq_current} GHz {load_percent}%'
+                ),
+
+                widget.TextBox(text='RAM:', foreground='#98c379'),
+                widget.Memory(foreground='#98c379'),
+                widget.TextBox(text='', foreground='#81a1c1'),
+                widget.Volume(foreground='#81a1c1'),
+                widget.TextBox(text='', foreground='#8fbcbb'),
+                widget.Battery(format='{char} {percent:2.0%} W', foreground='#8fbcbb', charge_char='', discharge_char='', full_char=''),
+
+                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground='#ebcb8b'),
+                widget.Systray(background='#4b5162'),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 4, 0],

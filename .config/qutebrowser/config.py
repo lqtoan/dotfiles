@@ -11,7 +11,7 @@
 #   qute://help/settings.html
 
 # Change the argument to True to still load settings configured via autoconfig.yml
-config.load_autoconfig(True)
+config.load_autoconfig(False)
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -159,6 +159,5 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 c.url.searchengines = {
 	'DEFAULT': 'https://www.google.com/search?q={}', 
 }
-
 # Setting dark mode
 config.source('./theme.py')
