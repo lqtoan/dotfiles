@@ -1,4 +1,5 @@
 call plug#begin('~/.config/nvim/bundle')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree' 
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/autocomplpop'
@@ -6,6 +7,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 call plug#end()
 
@@ -17,13 +19,16 @@ filetype plugin indent on
 autocmd BufEnter * :set scroll=10 
 syntax on
 
+set noswapfile
 set autoread
 set autowrite
+set history=50
 
 set showcmd
 
 set ruler
 set number
+set relativenumber
 
 set complete+=kspell
 set completeopt=menuone,longest
@@ -35,15 +40,24 @@ set mouse=a
 set incsearch 
 set hlsearch  
 
+" set cindent
+set backspace=2
 set tabstop=4 
 set softtabstop=0
 set shiftwidth=4
+" set smarttab
 
 set laststatus=2
 
 set termguicolors
+" no insert in insert mode 
+set noshowmode
+
 "set ft=conf 
 "--------------------------------------------------------------------------------------
+let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
 "NERDTree
 map <C-b> :NERDTreeToggle<CR>
 map <C-i> :NERDTreeFind<CR>
@@ -85,3 +99,6 @@ let g:hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 let g:Hexokinase_highlighters = ['virtual']
 let g:Hexokinase_ftAutoload = ['*']
 let g:Hexokinase_signIcon = 'o'
+
+" run python
+nnoremap <f1> <esc>:!python3 %:t<enter>

@@ -121,7 +121,7 @@ source ~/.fonts/*.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -152,14 +152,19 @@ alias pa='pavucontrol'
 alias pacc='paccache -rk0'
 alias pacs='sudo pacman -Suy'
 alias yays='yay -Suy'
+alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
+alias yayq='yay -Rns $(yay -Qtdq)'
 alias cls='colorscript -r'
 alias cls10='colorscript -e 10'
+alias cat='bat'
+alias ls='exa'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # (cat ~/.cache/wal/sequences &)
-clear
 export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

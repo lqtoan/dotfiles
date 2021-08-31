@@ -46,32 +46,35 @@ qutebrowser = "qutebrowser"
 
 keys = [
     # Switch between windows
-    Key([mod], "Left", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "Right", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "Down", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "Up", lazy.layout.up(), desc="Move focus up"),
+    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
+    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "space", lazy.layout.next(),
         desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "Left", lazy.layout.shuffle_left(),
-        desc="Move window to the left"),
-    Key([mod, "shift"], "Right", lazy.layout.shuffle_right(),
-        desc="Move window to the right"),
-    Key([mod, "shift"], "Down", lazy.layout.shuffle_down(),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
+        desc="Move window to the left"), 
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), 
         desc="Move window down"),
-    Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), 
+        desc="Move window up"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
+        desc="Move window to the right"),
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "Left", lazy.layout.grow_left(),
+    Key([mod, "control"], "h", lazy.layout.grow_left(),
         desc="Grow window to the left"),
-    Key([mod, "control"], "Right", lazy.layout.grow_right(),
-        desc="Grow window to the right"),
-    Key([mod, "control"], "Down", lazy.layout.grow_down(),
+       Key([mod, "control"], "j", lazy.layout.grow_down(),
         desc="Grow window down"),
-    Key([mod, "control"], "Up", lazy.layout.grow_up(), desc="Grow window up"),
+    Key([mod, "control"], "k", lazy.layout.grow_up(), 
+        desc="Grow window up"), 
+    Key([mod, "control"], "l", lazy.layout.grow_right(),
+        desc="Grow window to the right"),
+
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
     # Toggle between split and unsplit sides of stack.
@@ -87,10 +90,8 @@ keys = [
     Key([mod], "n", lazy.spawn(nitrogen), desc="Launch nitrogen"),
     Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
-    Key([mod], "k", lazy.spawn(kdeconnect), desc="Launch kde connect"),
+    Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
     Key([mod], "t", lazy.spawn(thunar), desc="Launch thunar"),
-    Key([mod], "c", lazy.spawn(sublime), desc="Launch sublime"),
-    Key([mod], "q", lazy.spawn(qutebrowser), desc="Launch qutebrowser"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -142,13 +143,12 @@ for i in groups:
 
 layout_conf = { 
         "border_focus":"#88c0d0",
-    "border_normal": "#282c34", 
-    "border_width": 2, 
-    "margin": 4
+    "border_normal": "#282c34" 
 }
 
 layouts = [
-    layout.Columns(**layout_conf),
+    layout.Columns(**layout_conf, margin=4, border_width=2),
+    # layout.Bsp(**layout_conf),
     layout.Floating(**layout_conf),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
@@ -204,7 +204,21 @@ screens = [
                     foreground='#c678dd',
                 ),
                 widget.TextBox(
-                    text='hello',
+                    text='',
+                    foreground='#c678dd',
+                    mouse_callbacks={
+                        'Button1': lambda: qtile.cmd_spawn('playerctl previous')
+                        }
+                    ),
+                widget.TextBox(
+                    text='  ',
+                    foreground='#c678dd',
+                    mouse_callbacks={
+                        'Button1': lambda: qtile.cmd_spawn('playerctl -a play-pause') 
+                        }
+                    ),
+                widget.TextBox(
+                    text='',
                     foreground='#c678dd',
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
