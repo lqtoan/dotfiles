@@ -3,7 +3,7 @@
 - Shell: zsh
 - Code Editor: neovim, sublime-text-4
 - File Manager: thunar
-- Terminal File Manager: ranger (with ueberzug image viewer)
+- Terminal File Manager: ranger
 - Browser: microsoft-edge-beta
 - Music Player: spotify
 - Image Viewer: viewnior
@@ -11,5 +11,5 @@
 - Kdeconnect
 - ...
 
-![21-08-30-14-28_screenshot](https://user-images.githubusercontent.com/89382043/131302500-6a59fd1a-bfc2-4b73-b871-a064a6610522.jpg)
+![21-09-03-105502_screenshot](https://user-images.githubusercontent.com/89382043/131948978-673b4e78-2ca8-4bd6-846a-a7d73ac7a449.jpg)
 
