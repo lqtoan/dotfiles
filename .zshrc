@@ -15,7 +15,7 @@ zstyle ':vcs_info:*' enable git cvs svn
 precmd() { vcs_info }
 
 # setopt PROMPT_SUBST
-PROMPT=' %{$fg_bold[yellow] %~%} %{$fg[magenta]${vcs_info_msg_0_}%}
+PROMPT=' %{$fg_bold[cyan] %~%} %{$fg[magenta]${vcs_info_msg_0_}%}
 %(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
 # ZSH_THEME_GIT_PROMPT_CLEAN=") %{$fg_bold[green]%}✔ "
 # ZSH_THEME_GIT_PROMPT_DIRTY=") %{$fg_bold[yellow]%}✗ "
@@ -135,10 +135,13 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# nvim aliases 
 alias vim='nvim'
 alias vi='nvim'
 alias nv='nvim'
 alias nvi='nvim'
+
+#config aliases 
 alias nvcf='nvim ~/.config/nvim/init.vim'
 alias zsh='nvim ~/.zshrc'
 alias qt='nvim ~/.config/qtile/config.py'
@@ -147,6 +150,8 @@ alias ktt='nvim ~/.config/kitty/theme.conf'
 alias xpf='nvim ~/.xprofile'
 alias qb='nvim ~/.config/qutebrowser/config.py'
 alias qbt='nvim ~/.config/qutebrowser/theme.py'
+
+#other alias 
 alias pgg='ping 8.8.8.8'
 alias pa='pavucontrol'
 alias pacc='paccache -rk0'
@@ -154,10 +159,16 @@ alias pacs='sudo pacman -Suy'
 alias yays='yay -Suy'
 alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
-alias cls='colorscript -r'
+
+# colorscript aliases
+alias clsl='colorscript -l'
+alias clsr='colorscript -r'
 alias cls10='colorscript -e 10'
+
+# modern unix
 alias cat='bat'
-alias ls='exa'
+alias ls="exa -lgh --icons --group-directories-first"
+alias la="exa -lgha --icons --group-directories-first"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -166,5 +177,4 @@ export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+clear 

@@ -30,8 +30,6 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile import qtile
-# from libqtile.utils import guess_terminal
-
 
 mod = "mod4"
 terminal = "kitty"
@@ -43,6 +41,21 @@ spotify = "spotify"
 kdeconnect = "kdeconnect-app"
 sublime = "subl"
 qutebrowser = "qutebrowser"
+oomox = "oomox-gui"
+office = "onlyoffice-desktopeditors"
+
+colors = [
+        "#282c34",  # 0:background
+        "#Eceff4",  # 1:active
+        "#7c818c",  # 2:inactive
+        "#e06c75",  # 3:red 
+        "#98c379",  # 4:green
+        "#ebcb8b",  # 5:yellow
+        "#5e81ac",  # 6:blue
+        "#fa74b2",  # 7:magenta
+        "#88c0d0",  # 8:cyan
+        "#3b4252",  # 9:selection
+        ] # magenta 
 
 keys = [
     # Switch between windows
@@ -50,32 +63,21 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(),
-        desc="Move window to the left"), 
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), 
-        desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), 
-        desc="Move window up"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),
-        desc="Move window to the right"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"), 
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),desc="Move window to the right"),
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(),
-        desc="Grow window to the left"),
-       Key([mod, "control"], "j", lazy.layout.grow_down(),
-        desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), 
-        desc="Grow window up"), 
-    Key([mod, "control"], "l", lazy.layout.grow_right(),
-        desc="Grow window to the right"),
-
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+       Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
+    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"), 
+    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
@@ -86,24 +88,26 @@ keys = [
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch microsoft-edge-beta"),
-    Key([mod], "f", lazy.spawn(terminal + " -e ranger"), desc="Launch ranger"),
-    Key([mod], "n", lazy.spawn(nitrogen), desc="Launch nitrogen"),
     Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
+    Key([mod], "f", lazy.spawn(terminal + " -e ranger"), desc="Launch ranger"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
     Key([mod], "t", lazy.spawn(thunar), desc="Launch thunar"),
+    Key([mod], "d", lazy.spawn(office), desc="Launch office"),
+
+    Key([mod], "o", lazy.spawn(oomox), desc="Launch oomox"),
+    Key([mod], "n", lazy.spawn(nitrogen), desc="Launch nitrogen"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
+    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     Key([mod, "control"], "r", lazy.spawn("reboot")),
     Key([mod, "control"], "q", lazy.spawn("poweroff")),
 
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # Change the volume if your keyboard has special volume keys.
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -119,31 +123,38 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # Take a screenshot
-    Key(
-        [], "Print",
-        lazy.spawn("scrot '%y-%m-%d-%H-%M_screenshot.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")
-    ),
-]
+    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),]
 
-groups = [Group(i) for i in "1234567890"]
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
+#groups = [Group(i) for i in "1234567890"]
+#for i in groups:
+#    keys.extend([
+        ## mod1 + letter of group = switch to group
+#        Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
+        ## mod1 + shift + letter of group = switch to & move focused window to group
+#        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+#            desc="Switch to & move focused window to group {}".format(i.name)),
         # Or, use below if you prefer not to switch to that group.
         # # mod1 + shift + letter of group = move focused window to group
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
         #     desc="move focused window to group {}".format(i.name)),
+#    ])
+groups = [Group(i) for i in ["1","2","3","4","5","6","7","8","9",]]
+
+for i, group in enumerate(groups):
+    actual_key = str(i + 1)
+    keys.extend([
+        # Switch to workspace N
+        Key([mod], actual_key, lazy.group[group.name].toscreen()),
+        # Send window to workspace N
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
+
     ])
 
+
 layout_conf = { 
-        "border_focus":"#88c0d0",
-    "border_normal": "#282c34" 
+    "border_focus": colors[8],
+    "border_normal": colors[0] 
 }
 
 layouts = [
@@ -177,13 +188,13 @@ screens = [
             [
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.GroupBox(
-                    active = ["#E5E9F0"],
-                    inactive = ["#7c818c"],
+                    active = colors[1],
+                    inactive = colors[2],
                     highlight_method = "block",
-                    highlight_color = ["#4b5162"],
-                    this_current_screen_border = ["#4b5162"],
+                    highlight_color = colors[9],
+                    this_current_screen_border = colors[9],
                 ),
-                widget.Prompt(),
+                #widget.Prompt(),
                 # widget.WindowName(format='{state}', max_chars=10),
                 widget.Chord(
                     chords_colors={
@@ -200,44 +211,47 @@ screens = [
                     display_metadata=['xesam:title', 'xesam:artist'],
                     scroll_interval=0,
                     scroll_wait_intervals=10000,
-                    scroll_chars=30,
-                    foreground='#c678dd',
+                    scroll_chars=10,
+                    foreground= colors[4],
                 ),
                 widget.TextBox(
                     text='',
-                    foreground='#c678dd',
+                    foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl previous')
                         }
                     ),
                 widget.TextBox(
                     text='  ',
-                    foreground='#c678dd',
+                    foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl -a play-pause') 
                         }
                     ),
                 widget.TextBox(
                     text='',
-                    foreground='#c678dd',
+                    foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text='CPU:', foreground='#e06c75'),
+                widget.TextBox(text='CPU:', foreground=colors[3]),
                 widget.CPU(
-                    foreground='#e06c75', 
+                    foreground=colors[3], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
+                widget.TextBox(text='|', foreground=colors[3]),
+                widget.TextBox(text='RAM:', foreground=colors[3]),
+                widget.Memory(
+                    foreground=colors[3],
+                    format='{MemUsed: .0f}{mm} {MemPercent}%'
+                ),
+                widget.TextBox(text='', foreground=colors[6]),
+                widget.Volume(foreground=colors[6]),
+                widget.TextBox(text='', foreground=colors[8]),
+                widget.Battery(format='{char} {percent:2.0%} W', foreground=colors[8], charge_char='', discharge_char='', full_char=''),
 
-                widget.TextBox(text='RAM:', foreground='#98c379'),
-                widget.Memory(foreground='#98c379'),
-                widget.TextBox(text='', foreground='#81a1c1'),
-                widget.Volume(foreground='#81a1c1'),
-                widget.TextBox(text='', foreground='#8fbcbb'),
-                widget.Battery(format='{char} {percent:2.0%} W', foreground='#8fbcbb', charge_char='', discharge_char='', full_char=''),
-
-                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground='#ebcb8b'),
+                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground=colors[5]),
                 widget.Systray(background='#4b5162'),
                 # widget.QuickExit(),
             ],

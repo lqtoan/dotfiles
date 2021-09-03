@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree' 
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/autocomplpop'
 Plug 'jiangmiao/auto-pairs' 
@@ -9,6 +10,8 @@ Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
+
+Plug 'mfussenegger/nvim-jdtls'
 call plug#end()
 
 "-------------------------------------------------------------------------------------
@@ -45,7 +48,7 @@ set backspace=2
 set tabstop=4 
 set softtabstop=0
 set shiftwidth=4
-" set smarttab
+set smarttab
 
 set laststatus=2
 
@@ -102,3 +105,8 @@ let g:Hexokinase_signIcon = 'o'
 
 " run python
 nnoremap <f1> <esc>:!python3 %:t<enter>
+" compile java program
+nnoremap <f2> <esc>:!javac %:t<enter>
+" run java
+nnoremap <f3> <esc>:!java %:r<enter>
+
