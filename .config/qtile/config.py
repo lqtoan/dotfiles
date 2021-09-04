@@ -52,7 +52,7 @@ colors = [
         "#98c379",  # 4:green
         "#ebcb8b",  # 5:yellow
         "#5e81ac",  # 6:blue
-        "#fa74b2",  # 7:magenta
+        "#c678dd",  # 7:magenta
         "#88c0d0",  # 8:cyan
         "#3b4252",  # 9:selection
         ] # magenta 
@@ -123,7 +123,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # Take a screenshot
-    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'")),]
+    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),]
 
 #groups = [Group(i) for i in "1234567890"]
 #for i in groups:
@@ -140,7 +140,7 @@ keys = [
         #     desc="move focused window to group {}".format(i.name)),
 #    ])
 groups = [Group(i) for i in ["1","2","3","4","5","6","7","8","9",]]
-
+# groups = [Group(i) for i in ["T", "O", "À", "N"]]
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
     keys.extend([
@@ -160,7 +160,7 @@ layout_conf = {
 layouts = [
     layout.Columns(**layout_conf, margin=4, border_width=2),
     # layout.Bsp(**layout_conf),
-    layout.Floating(**layout_conf),
+    layout.Floating(border_focus=colors[8]),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -186,7 +186,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(scale=0.5),
+                widget.Image(filename='~/Pictures/signature.png'),
                 widget.GroupBox(
                     active = colors[1],
                     inactive = colors[2],
@@ -194,7 +194,8 @@ screens = [
                     highlight_color = colors[9],
                     this_current_screen_border = colors[9],
                 ),
-                #widget.Prompt(),
+                widget.CurrentLayoutIcon(scale=0.5),
+                widget.Prompt(),
                 # widget.WindowName(format='{state}', max_chars=10),
                 widget.Chord(
                     chords_colors={
@@ -207,7 +208,7 @@ screens = [
                 widget.Spacer(),
                 widget.Mpris2(
                     name='spotify',
-                    objname='org.mpris.MediaPlayer2.spotify',
+                   objname='org.mpris.MediaPlayer2.spotify',
                     display_metadata=['xesam:title', 'xesam:artist'],
                     scroll_interval=0,
                     scroll_wait_intervals=10000,
@@ -235,23 +236,22 @@ screens = [
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text='CPU:', foreground=colors[3]),
+                widget.TextBox(text='CPU:', foreground=colors[6]),
                 widget.CPU(
-                    foreground=colors[3], 
+                    foreground=colors[6], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text='|', foreground=colors[3]),
-                widget.TextBox(text='RAM:', foreground=colors[3]),
+                widget.TextBox(text='RAM:', foreground=colors[8]),
                 widget.Memory(
-                    foreground=colors[3],
+                    foreground=colors[8],
                     format='{MemUsed: .0f}{mm} {MemPercent}%'
                 ),
-                widget.TextBox(text='', foreground=colors[6]),
-                widget.Volume(foreground=colors[6]),
-                widget.TextBox(text='', foreground=colors[8]),
-                widget.Battery(format='{char} {percent:2.0%} W', foreground=colors[8], charge_char='', discharge_char='', full_char=''),
+                widget.TextBox(text='', foreground=colors[5]),
+                widget.Volume(foreground=colors[5]),
+                widget.TextBox(text='', foreground=colors[7]),
+                widget.Battery(format='{char} {percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
 
-                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground=colors[5]),
+                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground=colors[3]),
                 widget.Systray(background='#4b5162'),
                 # widget.QuickExit(),
             ],

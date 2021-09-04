@@ -178,3 +178,5 @@ export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
 clear 
+eval "$(starship init zsh)"
+

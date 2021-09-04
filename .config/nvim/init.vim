@@ -11,7 +11,6 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 
-Plug 'mfussenegger/nvim-jdtls'
 call plug#end()
 
 "-------------------------------------------------------------------------------------
@@ -43,7 +42,7 @@ set mouse=a
 set incsearch 
 set hlsearch  
 
-" set cindent
+set cindent
 set backspace=2
 set tabstop=4 
 set softtabstop=0
@@ -59,7 +58,7 @@ set noshowmode
 "set ft=conf 
 "--------------------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
 "NERDTree
 map <C-b> :NERDTreeToggle<CR>
