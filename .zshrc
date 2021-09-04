@@ -9,12 +9,11 @@
 # PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '  (%b)'
-zstyle ':vcs_info:*' enable git cvs svn
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' formats '  (%b) %m%u%c '
 
-precmd() { vcs_info }
-
-# setopt PROMPT_SUBST
 PROMPT=' %{$fg_bold[cyan] %~%} %{$fg[magenta]${vcs_info_msg_0_}%}
 %(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
 # ZSH_THEME_GIT_PROMPT_CLEAN=") %{$fg_bold[green]%}✔ "
@@ -178,5 +177,5 @@ export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
 clear 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
