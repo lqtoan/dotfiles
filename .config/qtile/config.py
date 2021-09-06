@@ -33,7 +33,7 @@ from libqtile import qtile
 
 mod = "mod4"
 terminal = "kitty"
-browser = "microsoft-edge-beta"
+browser = "brave-browser-nightly"
 thunar = "thunar"
 nitrogen = "nitrogen"
 record = "simplescreenrecorder"
@@ -89,10 +89,9 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch microsoft-edge-beta"),
     Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
-    Key([mod], "f", lazy.spawn(terminal + " -e ranger"), desc="Launch ranger"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
-    Key([mod], "t", lazy.spawn(thunar), desc="Launch thunar"),
+    Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
     Key([mod], "d", lazy.spawn(office), desc="Launch office"),
 
     Key([mod], "o", lazy.spawn(oomox), desc="Launch oomox"),

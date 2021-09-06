@@ -10,7 +10,7 @@ Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
-
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 "-------------------------------------------------------------------------------------
@@ -101,6 +101,11 @@ let g:hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 let g:Hexokinase_highlighters = ['virtual']
 let g:Hexokinase_ftAutoload = ['*']
 let g:Hexokinase_signIcon = 'o'
+
+" Auto close tag
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.vue'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:jsx_ext_required = 0
 
 " run python
 nnoremap <f1> <esc>:!python3 %:t<enter>

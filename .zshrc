@@ -141,7 +141,7 @@ alias nv='nvim'
 alias nvi='nvim'
 
 #config aliases 
-alias nvcf='nvim ~/.config/nvim/init.vim'
+alias cfv='nvim ~/.config/nvim/init.vim'
 alias zsh='nvim ~/.zshrc'
 alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
