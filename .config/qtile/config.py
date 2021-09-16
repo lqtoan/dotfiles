@@ -40,7 +40,6 @@ record = "simplescreenrecorder"
 spotify = "spotify"
 kdeconnect = "kdeconnect-app"
 sublime = "subl"
-qutebrowser = "qutebrowser"
 oomox = "oomox-gui"
 office = "onlyoffice-desktopeditors"
 
@@ -48,11 +47,11 @@ colors = [
         "#282c34",  # 0:background
         "#Eceff4",  # 1:active
         "#7c818c",  # 2:inactive
-        "#e06c75",  # 3:red 
-        "#98c379",  # 4:green
+        "#BF616A",  # 3:red 
+        "#A3BE8C",  # 4:green
         "#ebcb8b",  # 5:yellow
         "#5e81ac",  # 6:blue
-        "#c678dd",  # 7:magenta
+        "#B48EAD",  # 7:magenta
         "#88c0d0",  # 8:cyan
         "#3b4252",  # 9:selection
         ] # magenta 
@@ -138,7 +137,7 @@ keys = [
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
         #     desc="move focused window to group {}".format(i.name)),
 #    ])
-groups = [Group(i) for i in ["1","2","3","4","5","6","7","8","9",]]
+groups = [Group(i) for i in ["1","2","3","4","5",]]
 # groups = [Group(i) for i in ["T", "O", "À", "N"]]
 for i, group in enumerate(groups):
     actual_key = str(i + 1)
@@ -152,7 +151,7 @@ for i, group in enumerate(groups):
 
 
 layout_conf = { 
-    "border_focus": colors[8],
+    "border_focus": colors[6],
     "border_normal": colors[0] 
 }
 

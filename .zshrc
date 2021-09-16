@@ -5,7 +5,7 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:*' formats '  (%b) %m%u%c '
 
-PROMPT='%{$fg_bold[cyan] %~%} %{$fg[magenta]${vcs_info_msg_0_}%}
+PROMPT='%{$fg_bold[cyan]%~%} %{$fg[magenta]${vcs_info_msg_0_}%}
 %(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
 
 # PLUGINS
