@@ -123,7 +123,7 @@ keys = [
     # Take a screenshot
     Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),]
 
-groups = [Group(i) for i in "1234567890"]
+groups = [Group(i) for i in "12345"]
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
@@ -142,13 +142,15 @@ for i in groups:
 
 layout_conf = { 
     "border_focus": colors[6],
-    "border_normal": colors[0] 
+    "border_normal": colors[0],
+    "margin": 3,
+    "border_width": 2
 }
 
 layouts = [
-    layout.Columns(**layout_conf, margin=4, border_width=2),
+    layout.Columns(**layout_conf),
     # layout.Bsp(**layout_conf),
-    layout.Floating(border_focus=colors[8]),
+    layout.Floating(border_focus=colors[6]),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -163,8 +165,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font = "DejaVu Sans",
-    fontsize = 12,
+    font = "Comic Sans MS",
+    fontsize = 13,
     padding = 3,
     background = colors[0]
 )
@@ -196,6 +198,7 @@ screens = [
                 widget.Spacer(),
                 widget.Mpris2(
                     name='spotify',
+                    font='VNF-Comic Sans',
                    objname='org.mpris.MediaPlayer2.spotify',
                     display_metadata=['xesam:title', 'xesam:artist'],
                     scroll_interval=0,
@@ -227,17 +230,17 @@ screens = [
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text='  ', fontsize=16, foreground=colors[6]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
                 widget.CPU(
                     foreground=colors[6], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text='  ', fontsize=16, foreground=colors[8]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
                 widget.Memory(
                     foreground=colors[8],
                     format='{MemUsed:.0f}{mm} {MemPercent}%'
                 ),
-                widget.TextBox(text='  ', fontsize=16, foreground=colors[5]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[5]),
                 widget.Volume(foreground=colors[5]),
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[7]),
                 widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
@@ -246,11 +249,11 @@ screens = [
                 widget.Systray(background=colors[9]),
                 # widget.QuickExit(),
             ],
-            24, margin = [0, 0, 4, 0],
+            24, margin = [0, 0, 3, 0],
         ),
-        bottom=bar.Gap(4),
-        left=bar.Gap(4),
-        right=bar.Gap(4),
+        bottom=bar.Gap(3),
+        left=bar.Gap(3),
+        right=bar.Gap(3),
     ),
 ]
 
