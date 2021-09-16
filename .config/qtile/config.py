@@ -207,7 +207,7 @@ screens = [
                     foreground= colors[4],
                 ),
                 widget.TextBox(
-                    text=' ',
+                    text='',
                     fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
@@ -215,7 +215,7 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text=' ',
+                    text='',
                     fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
@@ -223,29 +223,29 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text=' ',
+                    text='',
                     fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
                 widget.CPU(
                     foreground=colors[6], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
                 widget.Memory(
                     foreground=colors[8],
                     format='{MemUsed:.0f}{mm} {MemPercent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[5]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[5]),
                 widget.Volume(foreground=colors[5]),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[7]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[7]),
                 widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
 
-                widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground=colors[3]),
+                widget.Clock(format=' %a, %B %d | %I:%M:%S %p', foreground=colors[3]),
                 widget.Systray(background=colors[9]),
                 # widget.QuickExit(),
             ],
