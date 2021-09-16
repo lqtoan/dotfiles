@@ -31,8 +31,6 @@ alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
 alias ktt='nvim ~/.config/kitty/theme.conf'
 alias xpf='nvim ~/.xprofile'
-alias qb='nvim ~/.config/qutebrowser/config.py'
-alias qbt='nvim ~/.config/qutebrowser/theme.py'
 
 #other alias 
 alias pgg='ping 8.8.8.8'

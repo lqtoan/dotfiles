@@ -30,7 +30,7 @@ set showcmd
 
 set ruler
 set number
-set relativenumber
+"set relativenumber
 
 set complete+=kspell
 set completeopt=menuone,longest
