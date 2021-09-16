@@ -55,6 +55,10 @@ export BAT_THEME="base16"
 alias ls="exa -lgh --icons --group-directories-first"
 alias la="exa -lgha --icons --group-directories-first"
 
+#KDE CONNECT
+alias kde-start='kdeconnect-cli -l'
+alias kde-share='kdeconnect-cli -n "Redmi Note 9S" --share'
+
 # (cat ~/.cache/wal/sequences &)
 export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
