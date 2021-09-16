@@ -53,7 +53,7 @@ colors = [
         "#5e81ac",  # 6:blue
         "#B48EAD",  # 7:magenta
         "#88c0d0",  # 8:cyan
-        "#3b4252",  # 9:selection
+        "#2e3440",  # 9:selection
         ] # magenta 
 
 keys = [
@@ -166,7 +166,7 @@ widget_defaults = dict(
     font = "DejaVu Sans",
     fontsize = 12,
     padding = 3,
-    background = ["#282c34"]
+    background = colors[0]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -174,7 +174,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Image(filename='~/Pictures/signature.png'),
+                widget.Image(filename='~/Pictures/signature.png', background=colors[9]),
                 widget.GroupBox(
                     active = colors[1],
                     inactive = colors[2],
@@ -204,43 +204,46 @@ screens = [
                     foreground= colors[4],
                 ),
                 widget.TextBox(
-                    text='',
+                    text=' ',
+                    fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl previous')
                         }
                     ),
                 widget.TextBox(
-                    text='  ',
+                    text=' ',
+                    fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl -a play-pause') 
                         }
                     ),
                 widget.TextBox(
-                    text='',
+                    text=' ',
+                    fontsize=16,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text='CPU:', foreground=colors[6]),
+                widget.TextBox(text='  ', fontsize=16, foreground=colors[6]),
                 widget.CPU(
                     foreground=colors[6], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text='RAM:', foreground=colors[8]),
+                widget.TextBox(text='  ', fontsize=16, foreground=colors[8]),
                 widget.Memory(
                     foreground=colors[8],
-                    format='{MemUsed: .0f}{mm} {MemPercent}%'
+                    format='{MemUsed:.0f}{mm} {MemPercent}%'
                 ),
-                widget.TextBox(text='', foreground=colors[5]),
+                widget.TextBox(text='  ', fontsize=16, foreground=colors[5]),
                 widget.Volume(foreground=colors[5]),
-                widget.TextBox(text='', foreground=colors[7]),
-                widget.Battery(format='{char} {percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[7]),
+                widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
 
                 widget.Clock(format='%a, %B %d | %I:%M:%S %p', foreground=colors[3]),
-                widget.Systray(background='#4b5162'),
+                widget.Systray(background=colors[9]),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 4, 0],
