@@ -44,17 +44,17 @@ oomox = "oomox-gui"
 office = "onlyoffice-desktopeditors"
 
 colors = [
-        "#282c34",  # 0:background
+        "#2e3440",  # 0:background
         "#Eceff4",  # 1:active
         "#7c818c",  # 2:inactive
         "#BF616A",  # 3:red 
         "#A3BE8C",  # 4:green
         "#ebcb8b",  # 5:yellow
-        "#5e81ac",  # 6:blue
+        "#81a1c1",  # 6:blue
         "#B48EAD",  # 7:magenta
         "#88c0d0",  # 8:cyan
-        "#2e3440",  # 9:selection
-        ] # magenta 
+        "#3b4252",  # 9:selection
+        ]  
 
 keys = [
     # Switch between windows
@@ -153,13 +153,12 @@ layouts = [
     layout.Floating(border_focus=colors[6]),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
+    # layout.MonadTall(**layout_conf),
     # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
+    # layout.RatioTile(**layout_conf),
+    # layout.Tile(**layout_conf),
+    # layout.TreeTab(**layout_conf),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]

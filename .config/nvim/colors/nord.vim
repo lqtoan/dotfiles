@@ -16,11 +16,11 @@ let g:colors_name = "nord"
 let s:nord_vim_version="0.18.0"
 set background=dark
 
-let s:nord0_gui = "#282c34"
-let s:nord1_gui = "#2e3440"
-let s:nord2_gui = "#3b4252"
-let s:nord3_gui = "#434c5e"
-let s:nord3_gui_bright = "#4c566a"
+let s:nord0_gui = "#2e3440"
+let s:nord1_gui = "#3b4252"
+let s:nord2_gui = "#434c5e"
+let s:nord3_gui = "#4c566a"
+let s:nord3_gui_bright = "#616e88"
 let s:nord4_gui = "#D8DEE9"
 let s:nord5_gui = "#E5E9F0"
 let s:nord6_gui = "#ECEFF4"
@@ -173,7 +173,7 @@ call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
 call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
-call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
+call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Pmenu", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PmenuSel", s:nord9_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
@@ -285,7 +285,7 @@ call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
 call s:hi("Function", s:nord9_gui, "", s:nord8_term, "", "", "")
 call s:hi("Identifier", s:nord9_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord15_gui, "", s:nord9_term, "", "", "")
-call s:hi("Keyword", s:nord8_gui, "", s:nord9_term, "", "", "")
+call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Label", s:nord8_gui, "", s:nord9_term, "", "", "")
 call s:hi("Number", s:nord13_gui, "", s:nord15_term, "", "", "")
 call s:hi("Operator", s:nord4_gui, "", s:nord9_term, "", "NONE", "")

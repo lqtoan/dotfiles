@@ -42,12 +42,12 @@ table_format = ascii
 # fruity.
 # Screenshots at http://mycli.net/syntax
 # Can be further modified in [colors]
-syntax_style = default
+syntax_style = manni
 
 # Keybindings: Possible values: emacs, vi.
 # Emacs mode: Ctrl-A is home, Ctrl-E is end. All emacs keybindings are available in the REPL.
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
-key_bindings = emacs
+key_bindings = nvim
 
 # Enabling this option will show the suggestions in a wider menu. Thus more items are suggested.
 wider_completion_menu = False
@@ -67,7 +67,7 @@ wider_completion_menu = False
 # \A - DSN alias name (from the [alias_dsn] section)
 # \u - Username
 # \x1b[...m - insert ANSI escape sequence
-prompt = '\t \u@\h:\d> '
+prompt = '\t \u@\h:\p [(\d)]> '
 prompt_continuation = '->'
 
 # Skip intro info on startup and outro info on exit
@@ -88,49 +88,49 @@ enable_pager = True
 
 # Custom colors for the completion menu, toolbar, etc.
 [colors]
-completion-menu.completion.current = 'bg:#3b4252 #81a1c1'
-completion-menu.completion = 'bg:#2e3440 #d8dee9'
+completion-menu.completion.current = 'bg:#434c5e #5e81ac'
+completion-menu.completion = 'bg:#3b4252 #d8dee9'
 completion-menu.meta.completion.current = 'bg:#44aaaa #000000'
 completion-menu.meta.completion = 'bg:#448888 #ffffff'
 completion-menu.multi-column-meta = 'bg:#aaffff #000000'
 scrollbar.arrow = 'bg:#003333'
-scrollbar = 'bg:#2e3440'
+scrollbar = 'bg:#434c5e'
 selected = '#ffffff bg:#6666aa'
 search = '#ffffff bg:#4444aa'
 search.current = '#ffffff bg:#44aa44'
-bottom-toolbar = 'bg:#222222 #aaaaaa'
-bottom-toolbar.off = 'bg:#222222 #888888'
-bottom-toolbar.on = 'bg:#222222 #ffffff'
+bottom-toolbar = 'bg:#434c5e #aaaaaa'
+bottom-toolbar.off = 'bg:#434c5e #888888'
+bottom-toolbar.on = 'bg:#434c5e #ffffff'
 search-toolbar = 'noinherit bold'
 search-toolbar.text = 'nobold'
 system-toolbar = 'noinherit bold'
 arg-toolbar = 'noinherit bold'
 arg-toolbar.text = 'nobold'
-bottom-toolbar.transaction.valid = 'bg:#222222 #00ff5f bold'
-bottom-toolbar.transaction.failed = 'bg:#222222 #ff005f bold'
+bottom-toolbar.transaction.valid = 'bg:#434c5e #00ff5f bold'
+bottom-toolbar.transaction.failed = 'bg:#434c5e #ff005f bold'
 
 # style classes for colored table output
 output.header = "#b48ead bold"
 output.odd-row = ""
 output.even-row = ""
-output.null = "#808080"
+output.null = "#4c566a"
 
 # SQL syntax highlighting overrides
-# sql.comment = 'italic #408080'
+sql.comment = 'italic #3b4252'
 # sql.comment.multi-line = ''
 # sql.comment.single-line = ''
 # sql.comment.optimizer-hint = ''
 # sql.escape = 'border:#FF0000'
 sql.keyword = 'bold #5e81ac'
-sql.datatype = '#b48ead'
+sql.datatype = '#ebcb8b'
 # sql.literal = ''
 # sql.literal.date = ''
 # sql.symbol = ''
 # sql.quoted-schema-object = ''
 # sql.quoted-schema-object.escape = ''
 # sql.constant = '#880000'
-# sql.function = '#0000FF'
-# sql.variable = '#19177C'
+sql.function = '#5e81ac'
+sql.variable = '#81a1c1'
 sql.number = '#ebcb8b'
 # sql.number.binary = ''
 # sql.number.float = ''

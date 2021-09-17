@@ -3,7 +3,8 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-zstyle ':vcs_info:*' formats '  (%b) %m%u%c '
+zstyle ':vcs_info:git:*' formats '  (%b) %m%u%c '
+zstyle 'vcs_info:*' enable git 
 
 PROMPT='%{$fg[white]%}[%{$fg[blue]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[yellow]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%# %{$fg[magenta]%}${vcs_info_msg_0_}
 %(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
@@ -15,7 +16,7 @@ plugins=(git zsh-autosuggestions zsh-completions)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
-export TERMINAL='kitty'
+export TERMINAL='xterm-kitty'
 
 # ALIAS 
 # nvim aliases 
@@ -61,5 +62,16 @@ export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
+
+#HISTORY
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
 clear 
 

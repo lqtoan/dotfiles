@@ -1,16 +1,23 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree' 
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'itchyny/lightline.vim'
-Plug 'vim-scripts/autocomplpop'
 Plug 'jiangmiao/auto-pairs' 
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
+
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin' 
+Plug 'ryanoasis/vim-devicons' 	
+
+Plug 'nvim-treesitter/nvim-treesitter'
+
+Plug 'itchyny/lightline.vim'
+Plug 'vim-scripts/autocomplpop'
+
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
-Plug 'mattn/emmet-vim'
+
 call plug#end()
 
 "-------------------------------------------------------------------------------------
@@ -61,7 +68,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
 "NERDTree
-map <C-b> :NERDTreeToggle<CR>
+map <F5> :NERDTreeToggle<CR>
 map <C-i> :NERDTreeFind<CR>
 let g:NERDTreePatternMatchHighlightFullName = 1
 let NERDTreeAutoDeleteBuffer = 1
