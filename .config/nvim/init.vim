@@ -5,6 +5,7 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
+Plug 'vim-scripts/autocomplpop'
 
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin' 
@@ -13,7 +14,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'itchyny/lightline.vim'
-Plug 'vim-scripts/autocomplpop'
 
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
@@ -87,7 +87,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo', 'percent' ],
+      \   'right': [ [ 'li:checkhealth telescopeneinfo', 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'separator': { 'left': '', 'right': '' },

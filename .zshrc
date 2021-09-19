@@ -17,6 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export TERMINAL='xterm-kitty'
+export TERM=xterm-256color
 
 # ALIAS 
 # nvim aliases 
@@ -45,6 +46,7 @@ alias yayq='yay -Rns $(yay -Qtdq)'
 # colorscript aliases
 alias clsl='colorscript -l'
 alias clsr='colorscript -r'
+alias cls='colorscript -e'
 alias cls10='colorscript -e 10'
 
 # modern unix

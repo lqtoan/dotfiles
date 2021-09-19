@@ -173,7 +173,7 @@ call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
 call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
-call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", s:nord1_term, "", "")
+call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
 call s:hi("Pmenu", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PmenuSel", s:nord9_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
@@ -228,7 +228,7 @@ call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:nord1_gui, s:nord0_gui, s:nord1_term, "NONE", "", "")
 
 "+--- Navigation ---+
-call s:hi("Directory", s:nord8_gui, "", s:nord8_term, "NONE", "", "")
+call s:hi("Directory", s:nord9_gui, "", s:nord8_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")

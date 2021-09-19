@@ -5,6 +5,13 @@ screenkey &
 # Add this to your .xinitrc or whatever file starts programs on startup.
 # -R restores the last colorscheme that was in use.
 # wal -R
+#
+# make CapsLock a Ctrl key, press both Shift keys to enable/disable CapsLock
+setxkbmap -option ctrl:nocaps,shift:both_capslock
+# if CapsLock key is pressed once, it's Esc key
+killall xcape 2>/dev/null ; xcape
+
+
 
 export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
