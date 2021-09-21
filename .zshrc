@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export TERMINAL='xterm-kitty'
-export TERM=xterm-256color
+export COLORTERM="truecolor"
 
 # ALIAS 
 # nvim aliases 
@@ -60,9 +60,10 @@ alias kde-start='kdeconnect-cli -l'
 alias kde-share='kdeconnect-cli -n "Redmi Note 9S" --share'
 
 # (cat ~/.cache/wal/sequences &)
-export GTK_IM_MODULE=ibus
+export GTK_IM_MODULE=ibus kitty 
 export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 #HISTORY

@@ -49,11 +49,13 @@ colors = [
         "#7c818c",  # 2:inactive
         "#BF616A",  # 3:red 
         "#A3BE8C",  # 4:green
-        "#ebcb8b",  # 5:yellow
-        "#81a1c1",  # 6:blue
-        "#B48EAD",  # 7:magenta
-        "#88c0d0",  # 8:cyan
-        "#3b4252",  # 9:selection
+        "#d08770",  # 5:orange
+        "#ebcb8b",  # 6:yellow
+        "#5e81ac",  # 7:dark_blue
+        "#81a1c1",  # 8:blue
+        "#B48EAD",  # 9:magenta
+        "#88c0d0",  # 10:cyan
+        "#3b4252",  # 11:selection
         ]  
 
 keys = [
@@ -134,14 +136,12 @@ for i in groups:
             desc="Switch to & move focused window to group {}".format(i.name)),
         # Or, use below if you prefer not to switch to that group.
         # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
-#    ])
-    ])
+        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name), desc="move focused window to group {}".format(i.name)),
+])
 
 
 layout_conf = { 
-    "border_focus": colors[6],
+    "border_focus": colors[8],
     "border_normal": colors[0],
     "margin": 3,
     "border_width": 2
@@ -150,7 +150,7 @@ layout_conf = {
 layouts = [
     layout.Columns(**layout_conf),
     # layout.Bsp(**layout_conf),
-    layout.Floating(border_focus=colors[6]),
+    layout.Floating(border_focus=colors[8]),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
     # layout.Matrix(),
@@ -175,13 +175,14 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Image(filename='~/Pictures/signature.png', background=colors[9]),
+                widget.Image(filename='~/Pictures/signature.png', background=colors[8]),
                 widget.GroupBox(
+                    padding=1,
                     active = colors[1],
                     inactive = colors[2],
                     highlight_method = "block",
-                    highlight_color = colors[9],
-                    this_current_screen_border = colors[9],
+                    highlight_color = colors[11],
+                    this_current_screen_border = colors[11],
                 ),
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.Prompt(),
@@ -207,7 +208,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text='',
-                    fontsize=16,
+                    fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl previous')
@@ -215,7 +216,7 @@ screens = [
                     ),
                 widget.TextBox(
                     text='',
-                    fontsize=16,
+                    fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl -a play-pause') 
@@ -223,29 +224,29 @@ screens = [
                     ),
                 widget.TextBox(
                     text='',
-                    fontsize=16,
+                    fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl next')
                         }
                     ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
                 widget.CPU(
-                    foreground=colors[6], 
+                    foreground=colors[8], 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[10]),
                 widget.Memory(
-                    foreground=colors[8],
+                    foreground=colors[10],
                     format='{MemUsed:.0f}{mm} {MemPercent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[5]),
-                widget.Volume(foreground=colors[5]),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[7]),
-                widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[7], charge_char='', discharge_char='', full_char=''),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
+                widget.Volume(foreground=colors[6]),
+                widget.TextBox(text=' ', fontsize=16, foreground=colors[9]),
+                widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[9], charge_char='', discharge_char='', full_char=''),
 
                 widget.Clock(format=' %a, %B %d | %I:%M:%S %p', foreground=colors[3]),
-                widget.Systray(background=colors[9]),
+                widget.Systray(background=colors[11]),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 3, 0],

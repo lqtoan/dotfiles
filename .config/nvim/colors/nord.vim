@@ -178,12 +178,12 @@ call s:hi("Pmenu", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PmenuSel", s:nord9_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("PmenuThumb", s:nord9_gui, s:nord3_gui, "NONE", s:nord3_term, "", "")
-call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
+call s:hi("SpecialKey", s:nord11_gui, "", s:nord3_term, "", "", "")
 call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercurl", s:nord11_gui)
 call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
 call s:hi("SpellLocal", s:nord5_gui, s:nord0_gui, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:nord0_gui, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
-call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
+call s:hi("Visual", "", s:nord1_gui, "", s:nord1_term, "", "")
 call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
 "+- Neovim Support -+
 call s:hi("healthError", s:nord11_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
@@ -228,7 +228,7 @@ call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:nord1_gui, s:nord0_gui, s:nord1_term, "NONE", "", "")
 
 "+--- Navigation ---+
-call s:hi("Directory", s:nord9_gui, "", s:nord8_term, "NONE", "", "")
+call s:hi("Directory", s:nord10_gui, "", s:nord10_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
@@ -282,8 +282,8 @@ call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
-call s:hi("Function", s:nord9_gui, "", s:nord8_term, "", "", "")
-call s:hi("Identifier", s:nord9_gui, "", "NONE", "", "NONE", "")
+call s:hi("Function", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("Identifier", s:nord10_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord15_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Label", s:nord8_gui, "", s:nord9_term, "", "", "")
@@ -611,8 +611,14 @@ call s:hi("jediFat", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, s:und
 " NERDTree
 " > scrooloose/nerdtree
 call s:hi("NERDTreeExecFile", s:nord14_gui, "", s:nord14_term, "", "", "")
+call s:hi("NERDTreeDir", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("NERDTreeFile", s:nord14_gui, "", s:nord13_term, "", "", "")
 hi! link NERDTreeDirSlash Keyword
 hi! link NERDTreeHelp Comment
+
+" Floaterm
+" > 
+" hi! link Floaterm Keyword
 
 " CtrlP
 " > ctrlpvim/ctrlp.vim

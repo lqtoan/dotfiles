@@ -11,12 +11,16 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin' 
 Plug 'ryanoasis/vim-devicons' 	
 
+Plug 'voldikss/vim-floaterm'
+
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'itchyny/lightline.vim'
 
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
+
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -80,6 +84,21 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules']
 let NERDTreeShowHidden=1
 let g:NERDTreeShowBookmarks=1
+"NERDTree git plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
+let g:NERDTreeGitStatusShowClean = 1 " default: 0
 
 "Theme
 let g:lightline = {
@@ -101,13 +120,26 @@ colorscheme nord
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+
 " Italics for my favorite color scheme
-let g:onedark_terminal_italics=1
+"let g:onedark_terminal_italics=1
+
 let g:Hexokinase_v2 = 0
 let g:hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
+"Set highlighter virtual, highlighter, sign_column, foreground/full, background/full
 let g:Hexokinase_highlighters = ['virtual']
 let g:Hexokinase_ftAutoload = ['*']
 let g:Hexokinase_signIcon = 'o'
+
+" Floaterm
+let g:floaterm_gitcommit='floaterm'
+let g:floaterm_autoinsert=1
+let g:floaterm_width=0.8
+let g:floaterm_height=0.9
+let g:floaterm_wintitle=0
+let g:floaterm_autoclose=1
+let g:floaterm_borderchars = ''
+let g:floaterm_keymap_toggle = 'ft'
 
 " Auto close tag
 let g:closetag_filenames = '*.html,*.js,*.jsx,*.vue'
@@ -115,9 +147,9 @@ let g:closetag_emptyTags_caseSensitive = 1
 let g:jsx_ext_required = 0
 
 " run python
-nnoremap <f1> <esc>:!python3 %:t<enter>
+nnoremap <f1> <esc>:!python3 %<enter>
 " compile java program
-nnoremap <f2> <esc>:!javac %:t<enter>
+nnoremap <f2> <esc>:!javac %<enter>
 " run java
-nnoremap <f3> <esc>:!java %:r<enter>
+nnoremap <f3> <esc>:!java %<enter>
 

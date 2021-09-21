@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #2e3440;
+    width: 100%;
+	min-width: 20rem;
+    max-height: 40rem;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+}
+/*--- Top ---*/
+div#top {
+	height: 20rem;
+}
+
+h1 {
+	margin: 10%;
+	color: #ECEFF4;
+	text-align: center;
+}
+
+/*--- Search ---*/
+div#search {
+	height: 8rem;
+}
+
+input {
+	text-align: left;
+	background: #d8dee9;
+	color: #3b4252;
+	display: block;
+	line-height: 1.5rem;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+input[type=text]:focus {
+	border: none;
+	outline: none;
+}
+
+p {
+	color: #ECEFF4;
+	text-align: left;
+}
+/*--- Main ---*/
+div#bookmarks {
+    display: flex;
+    height: 10rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bookmarks {
+	width: 15%;
+}
+
+ul {
+	display: inline;
+	list-style-type: none;
+}
+
+ul p {
+	margin-left: 5%;
+}
+
+a {
+	font-size: 90%;
+	font-style: italic;
+	text-decoration: none;
+}
+
+a:visited, a:link {
+	color: #5e81ac;
+}
+
+a:hover {
+	color: #88c0d0;
+}
+
+/*--- Footer ---*/
+div#footer {
+	height: 2rem;
+}
+
+div#footer p {
+	text-align: center;
+}
+
