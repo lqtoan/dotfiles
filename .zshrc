@@ -6,8 +6,8 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '  (%b) %m%u%c '
 zstyle 'vcs_info:*' enable git 
 
-PROMPT='%{$fg[white]%}[%{$fg[blue]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[yellow]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%# %{$fg[magenta]%}${vcs_info_msg_0_}
-%(?.%{$fg[green]%}➜.%{$fg_bold[red]%}➜) %{$reset_color%}'
+PROMPT='%{$fg[white]%}[%{$fg[yellow]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[blue]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%# %{$fg[magenta]%}${vcs_info_msg_0_}
+%(?.%{$fg_bold[green]%} .%{$fg_bold[red]%} ) %{$reset_color%}'
 
 # PLUGINS
 export ZSH="/home/toan/.oh-my-zsh"
@@ -56,8 +56,8 @@ alias ls="exa -lgh --icons --group-directories-first"
 alias la="exa -lgha --icons --group-directories-first"
 
 #KDE CONNECT
-alias kde-start='kdeconnect-cli -l'
-alias kde-share='kdeconnect-cli -n "Redmi Note 9S" --share'
+alias start='kdeconnect-cli -l'
+alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
 
 # (cat ~/.cache/wal/sequences &)
 export GTK_IM_MODULE=ibus kitty 

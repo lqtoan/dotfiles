@@ -125,7 +125,7 @@ keys = [
     # Take a screenshot
     Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),]
 
-groups = [Group(i) for i in "12345"]
+groups = [Group(i) for i in "1234"]
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group

@@ -8,10 +8,6 @@ body {
     margin: 0;
     padding: 0;
     background: #2e3440;
-    width: 100%;
-	min-width: 20rem;
-    max-height: 40rem;
-    min-height: 10rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -20,18 +16,20 @@ body {
 }
 /*--- Top ---*/
 div#top {
-	height: 20rem;
+	height: 40vh;
+	overflow: hidden;
+	z-index: 2;
 }
 
 h1 {
-	margin: 10%;
+	margin-top: 20vh; 
 	color: #ECEFF4;
 	text-align: center;
 }
 
 /*--- Search ---*/
 div#search {
-	height: 8rem;
+	height: 15vh;
 }
 
 input {
@@ -39,35 +37,36 @@ input {
 	background: #d8dee9;
 	color: #3b4252;
 	display: block;
-	line-height: 1.5rem;
-	border-radius: 10px;
+	line-height: 20pt;
+	border-radius: 15px;
 	border: none;
 	outline: none;
-	margin: 0 auto;
-	padding: 0 1rem;
+	box-shadow: 1px 1px 1px #3b4252;
+	margin: 5vh auto;
+	padding: 0 1.5vw;
 }
 
-input[type=text]:focus {
+input[type=search]:focus {
 	border: none;
 	outline: none;
 }
 
-p {
-	color: #ECEFF4;
-	text-align: left;
-}
 /*--- Main ---*/
 div#bookmarks {
     display: flex;
-    height: 10rem;
+    height: 40vh;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
+    z-index: 3;
+    align-content: space-between;
 }
 
 .bookmarks {
-	width: 15%;
+	width: 15vw;
+	margin: 2vh 5vw;
 }
 
 ul {
@@ -76,7 +75,13 @@ ul {
 }
 
 ul p {
-	margin-left: 5%;
+	color: #ECEFF4;
+	text-align: center;
+}
+
+li {
+	padding: 0.5vh 1vw;
+	border-radius: 5px;
 }
 
 a {
@@ -95,10 +100,14 @@ a:hover {
 
 /*--- Footer ---*/
 div#footer {
-	height: 2rem;
+	height: 5vh;
+	overflow: hidden;
+	z-index: 1;
 }
 
 div#footer p {
+	color: #616e88;
 	text-align: center;
 }
+
 

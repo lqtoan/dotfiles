@@ -287,7 +287,7 @@ call s:hi("Identifier", s:nord10_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord15_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Label", s:nord8_gui, "", s:nord9_term, "", "", "")
-call s:hi("Number", s:nord13_gui, "", s:nord15_term, "", "", "")
+call s:hi("Number", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("Operator", s:nord4_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("PreProc", s:nord13_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -359,14 +359,14 @@ hi! link csType Type
 hi! link csXmlTag SpecialComment
 
 call s:hi("cssAttributeSelector", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("cssDefinition", s:nord7_gui, "", s:nord7_term, "", "NONE", "")
-call s:hi("cssIdentifier", s:nord7_gui, "", s:nord7_term, "", s:underline, "")
-call s:hi("cssStringQ", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("cssDefinition", s:nord14_gui, "", s:nord14_term, "", "NONE", "")
+call s:hi("cssIdentifier", s:nord9_gui, "", s:nord9_term, "", s:underline, "")
+call s:hi("cssStringQ", s:nord13_gui, "", s:nord13_term, "", "", "")
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
 hi! link cssClassName cssDefinition
-hi! link cssColor Number
-hi! link cssProp cssDefinition
+call s:hi("cssColor", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("cssProp", s:nord14_gui, "", s:nord14_term, "", "NONE", "")
 hi! link cssPseudoClass cssDefinition
 hi! link cssPseudoClassId cssPseudoClass
 hi! link cssVendor Keyword
