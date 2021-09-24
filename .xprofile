@@ -11,9 +11,8 @@ setxkbmap -option ctrl:nocaps,shift:both_capslock
 # if CapsLock key is pressed once, it's Esc key
 killall xcape 2>/dev/null ; xcape
 
-
-
 export GTK_IM_MODULE=ibus
 export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
 pidof ibus-daemon > /dev/null || ibus-daemon -drx

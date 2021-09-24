@@ -50,6 +50,7 @@ alias cls='colorscript -e'
 alias cls10='colorscript -e 10'
 
 # modern unix
+alias cl="clear"
 alias cat='bat'
 export BAT_THEME="base16"
 alias ls="exa -lgh --icons --group-directories-first"
@@ -60,11 +61,11 @@ alias start='kdeconnect-cli -l'
 alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
 
 # (cat ~/.cache/wal/sequences &)
-export GTK_IM_MODULE=ibus kitty 
-export XMODIFIER=@im-ibus
-export QT_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
-pidof ibus-daemon > /dev/null || ibus-daemon -drx
+# export GTK_IM_MODULE=ibus kitty 
+# export XMODIFIER=@im-ibus kitty
+# export QT_IM_MODULE=ibus kitty
+# export GLFW_IM_MODULE=ibus
+# pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 #HISTORY
 export HISTFILE=~/.zsh_history
@@ -77,4 +78,3 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
 clear 
-

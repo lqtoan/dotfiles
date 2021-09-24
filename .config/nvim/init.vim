@@ -33,6 +33,7 @@ autocmd BufEnter * :set scroll=10
 syntax on
 
 set noswapfile
+set nobackup
 set autoread
 set autowrite
 set history=50
@@ -63,13 +64,12 @@ set smarttab
 set laststatus=2
 
 set termguicolors
-" no insert in insert mode 
 set noshowmode
 
 "set ft=conf 
 "--------------------------------------------------------------------------------------
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<C-n>"
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<C-n>'
 
 "NERDTree
 map <F5> :NERDTreeToggle<CR>
@@ -145,6 +145,9 @@ let g:floaterm_keymap_toggle = 'ft'
 let g:closetag_filenames = '*.html,*.js,*.jsx,*.vue'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:jsx_ext_required = 0
+
+let g:user_emmet_node='n'
+let g:user_emmet_leader_key=','
 
 " run python
 nnoremap <f1> <esc>:!python3 %<enter>

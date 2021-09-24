@@ -150,7 +150,7 @@ layout_conf = {
 layouts = [
     layout.Columns(**layout_conf),
     # layout.Bsp(**layout_conf),
-    layout.Floating(border_focus=colors[8]),
+    layout.Floating(**layout_conf),
     # layout.Max(),
     # layout.Stack(num_stacks=2),
     # layout.Matrix(),
@@ -175,8 +175,9 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Image(filename='~/Pictures/signature.png', background=colors[8]),
+                widget.Image(filename='~/Pictures/signature.png', background=colors[7]),
                 widget.GroupBox(
+                    font= "DejaVu Sans",
                     padding=1,
                     active = colors[1],
                     inactive = colors[2],
@@ -211,7 +212,7 @@ screens = [
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
-                        'Button1': lambda: qtile.cmd_spawn('playerctl previous')
+                        'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify previous')
                         }
                     ),
                 widget.TextBox(
@@ -219,7 +220,7 @@ screens = [
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
-                        'Button1': lambda: qtile.cmd_spawn('playerctl -a play-pause') 
+                        'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify play-pause') 
                         }
                     ),
                 widget.TextBox(
@@ -227,7 +228,7 @@ screens = [
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
-                        'Button1': lambda: qtile.cmd_spawn('playerctl next')
+                        'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify next')
                         }
                     ),
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
