@@ -88,41 +88,53 @@ enable_pager = True
 
 # Custom colors for the completion menu, toolbar, etc.
 [colors]
-completion-menu.completion.current = 'bg:#434c5e #5e81ac'
-completion-menu.completion = 'bg:#3b4252 #d8dee9'
-completion-menu.meta.completion.current = 'bg:#44aaaa #000000'
-completion-menu.meta.completion = 'bg:#448888 #ffffff'
-completion-menu.multi-column-meta = 'bg:#aaffff #000000'
-scrollbar.arrow = 'bg:#003333'
-scrollbar = 'bg:#3b4252'
-selected = '#ffffff bg:#6666aa'
-search = '#ffffff bg:#4444aa'
-search.current = '#ffffff bg:#44aa44'
-bottom-toolbar = 'bg:#434c5e #aaaaaa'
-bottom-toolbar.off = 'bg:#434c5e #888888'
-bottom-toolbar.on = 'bg:#434c5e #ffffff'
+#------- TRUE COLOR-------------------------
+# dark-blue--: #5e81ac
+# blue-------: #81a1c1
+# purple-----: #b48ead
+# red--------: #bf616a
+# orange-----: #d08770
+# yellow-----: #ebcb8b
+# foreground-: #d8dee9
+# background-: #2e3440
+# dark-gray--: #3b4252
+# gray-------: #434c5e
+completion-menu.completion.current = 'bg:#5f87af #dadada'
+completion-menu.completion = 'bg:#4e4e4e #dadada'
+completion-menu.meta.completion.current = 'bg:#4e4e4e #4e4e4e'
+completion-menu.meta.completion = 'bg:#4e4e4e #4e4e4e'
+completion-menu.multi-column-meta = 'bg:#4e4e4e #4e4e4e'
+scrollbar.arrow = 'bg:#4e4e4e'
+scrollbar = 'bg:#4e4e4e'
+selected = '#eeeeee bg:#4e4e4e'
+search = '#eeeeee bg:#4e4e4e'
+search.current = '#c6c6c6 bg:#4e4e4e'
+bottom-toolbar = 'bg:#4e4e4e #dadada'
+bottom-toolbar.off = 'bg:#afdf87 #3a3a3a'
+bottom-toolbar.on = 'bg:#afdf87 #3a3a3a'
 search-toolbar = 'noinherit bold'
 search-toolbar.text = 'nobold'
 system-toolbar = 'noinherit bold'
 arg-toolbar = 'noinherit bold'
 arg-toolbar.text = 'nobold'
-bottom-toolbar.transaction.valid = 'bg:#434c5e #00ff5f bold'
-bottom-toolbar.transaction.failed = 'bg:#434c5e #ff005f bold'
+bottom-toolbar.transaction.valid = 'bg:#4e4e4e #3a3a3a bold'
+bottom-toolbar.transaction.failed = 'bg:#4e4e4e #3a3a3a bold'
 
 # style classes for colored table output
-output.header = "#b48ead bold"
+output.header = "#b787af bold"
 output.odd-row = ""
 output.even-row = ""
 output.null = "#4c566a"
 
 # SQL syntax highlighting overrides
-sql.comment = 'italic #3b4252'
+sql.comment = 'italic #3a3a3a'
 # sql.comment.multi-line = ''
 # sql.comment.single-line = ''
 # sql.comment.optimizer-hint = ''
 # sql.escape = 'border:#FF0000'
-sql.keyword = 'bold #5e81ac'
-sql.datatype = '#ebcb8b'
+
+sql.keyword = 'bold #5f87af'
+sql.datatype = '#ffd787'
 # sql.literal = ''
 # sql.literal.date = ''
 # sql.symbol = ''
@@ -130,15 +142,15 @@ sql.datatype = '#ebcb8b'
 # sql.quoted-schema-object.escape = ''
 # sql.constant = '#880000'
 sql.function = '#5e81ac'
-sql.variable = '#81a1c1'
-sql.number = '#ebcb8b'
+sql.variable = '#87afd7'
+sql.number = '#ffd787'
 # sql.number.binary = ''
 # sql.number.float = ''
 # sql.number.hex = ''
 # sql.number.integer = ''
 # sql.operator = '#666666'
 # sql.punctuation = ''
-sql.string = '#98c379'
+sql.string = '#afdf87'
 # sql.string.double-quouted = ''
 # sql.string.escape = 'bold #BB6622'
 # sql.string.single-quoted = ''

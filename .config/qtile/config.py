@@ -178,7 +178,7 @@ screens = [
                 widget.Image(filename='~/Pictures/signature.png', background=colors[7]),
                 widget.GroupBox(
                     font= "DejaVu Sans",
-                    padding=1,
+                    padding = 1,
                     active = colors[1],
                     inactive = colors[2],
                     highlight_method = "block",
