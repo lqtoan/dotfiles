@@ -6,7 +6,7 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '  (%b) %m%u%c '
 zstyle 'vcs_info:*' enable git 
 
-PROMPT='%{$fg[white]%}[%{$fg[yellow]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[blue]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%# %{$fg[magenta]%}${vcs_info_msg_0_}
+PROMPT='%{$fg[white]%}[%{$fg[yellow]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[blue]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%$ %{$fg[magenta]%}${vcs_info_msg_0_}
 %(?.%{$fg_bold[green]%} .%{$fg_bold[red]%} ) %{$reset_color%}'
 
 # PLUGINS

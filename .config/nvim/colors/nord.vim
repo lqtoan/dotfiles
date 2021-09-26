@@ -616,6 +616,13 @@ call s:hi("NERDTreeFile", s:nord14_gui, "", s:nord13_term, "", "", "")
 hi! link NERDTreeDirSlash Keyword
 hi! link NERDTreeHelp Comment
 
+" BufTabline
+" > ap/vim-buftabline
+call s:hi("BufTablineCurrent", s:nord4_gui, s:nord10_gui, s:nord5_term, s:nord10_term, "NONE", "")
+call s:hi("BufTablineActive", s:nord3_gui_bright, s:nord2_gui, s:nord1_term, s:nord3_term, "", "")
+hi! link BufTablineHidden BufTablineActive
+call s:hi("BufTablineFill", "", s:nord1_gui, "", s:nord1_term, "", "")
+
 " Floaterm
 " > 
 " hi! link Floaterm Keyword

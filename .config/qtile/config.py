@@ -58,6 +58,9 @@ colors = [
         "#3b4252",  # 11:selection
         ]  
 
+################################################
+#-----------KEY                                #
+################################################
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -123,23 +126,28 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # Take a screenshot
-    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),]
+    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
+]
 
-groups = [Group(i) for i in "1234"]
-for i in groups:
+################################################
+#-----------GROUP                              #
+################################################
+groups = [Group(i) for i in [
+    "", "", "", "", "", " ", "", "", "",
+]]
+
+for i, group in enumerate(groups):
+    actual_key = str(i + 1)
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
+        # Switch to workspace N
+        Key([mod], actual_key, lazy.group[group.name].toscreen()),
+        # Send window to workspace N
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name, switch_group='true')),
+    ])
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name), desc="move focused window to group {}".format(i.name)),
-])
-
-
+################################################
+#-----------LAYOUT                             #
+################################################
 layout_conf = { 
     "border_focus": colors[8],
     "border_normal": colors[0],
@@ -152,7 +160,7 @@ layouts = [
     # layout.Bsp(**layout_conf),
     layout.Floating(**layout_conf),
     # layout.Max(),
-    # layout.Stack(num_stacks=2),
+    # layout.Stack(num_stacks=2, autosplit='true', fair='true', **layout_conf),
     # layout.Matrix(),
     # layout.MonadTall(**layout_conf),
     # layout.MonadWide(),
@@ -163,6 +171,9 @@ layouts = [
     # layout.Zoomy(),
 ]
 
+################################################
+#-----------WIDGET                             #
+################################################
 widget_defaults = dict(
     font = "Comic Sans MS",
     fontsize = 13,

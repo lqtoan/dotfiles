@@ -16,6 +16,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-buftabline'
 
 Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
@@ -25,8 +26,8 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 source ~/.config/nvim/colors/lightline/nordone.vim
-
 "-------------------------------------------------------------------------------------
+
 let mapleader = "\<Space>"
 filetype plugin on
 filetype plugin indent on
@@ -34,17 +35,29 @@ filetype plugin indent on
 autocmd BufEnter * :set scroll=10 
 syntax on
 
+set hidden
 set noswapfile
 set nobackup
+set nowritebackup
 set autoread
 set autowrite
 set history=50
 
 set showcmd
+set cmdheight=1
 
 set ruler
 set number
-"set relativenumber
+set relativenumber
+
+" " Always show the signcolumn, otherwise it would shift the text each time
+" " diagnostics appear/become resolved.
+" if has("patch-8.1.1564")
+"   " Recently vim can merge signcolumn and number column into one
+"   set signcolumn=number
+" else
+"   set signcolumn=yes
+" endif
 
 " Tab charactor
 set listchars=tab:\|\ 
@@ -67,7 +80,7 @@ set backspace=2
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
-set smarttab
+" set smarttab
 
 set laststatus=2
 
@@ -126,7 +139,7 @@ let g:lightline = {
       \   'right': [ [ 'li:checkhealth telescopeneinfo', 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
