@@ -133,7 +133,7 @@ keys = [
 #-----------GROUP                              #
 ################################################
 groups = [Group(i) for i in [
-    "", "", "", "", "", " ", "", "", "",
+    "1", "2", "3", "4",
 ]]
 
 for i, group in enumerate(groups):
@@ -189,7 +189,7 @@ screens = [
                 widget.Image(filename='~/Pictures/signature.png', background=colors[7]),
                 widget.GroupBox(
                     font= "DejaVu Sans",
-                    padding = 1,
+                    padding = 0,
                     active = colors[1],
                     inactive = colors[2],
                     highlight_method = "block",
@@ -250,14 +250,14 @@ screens = [
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[10]),
                 widget.Memory(
                     foreground=colors[10],
-                    format='{MemUsed:.0f}{mm} {MemPercent}%'
+                    format='{MemUsed:.0f} {mm} {MemPercent}%'
                 ),
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
                 widget.Volume(foreground=colors[6]),
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[9]),
                 widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[9], charge_char='', discharge_char='', full_char=''),
 
-                widget.Clock(format=' %a, %B %d | %I:%M:%S %p', foreground=colors[3]),
+                widget.Clock(format=' %a, %d/%m | %I:%M:%S %p', foreground=colors[3]),
                 widget.Systray(background=colors[11]),
                 # widget.QuickExit(),
             ],

@@ -11,7 +11,7 @@ PROMPT='%{$fg[white]%}[%{$fg[yellow]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[blue
 
 # PLUGINS
 export ZSH="/home/toan/.oh-my-zsh"
-plugins=(git zsh-autosuggestions zsh-completions)
+plugins=(zsh-autosuggestions zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
