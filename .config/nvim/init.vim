@@ -32,7 +32,7 @@ let mapleader = "\<Space>"
 filetype plugin on
 filetype plugin indent on
 
-autocmd BufEnter * :set scroll=10 
+autocmd BufEnter * :set scroll=5 
 syntax on
 
 set hidden
@@ -49,7 +49,7 @@ set cmdheight=1
 set ruler
 set number
 set relativenumber
-
+set cursorline
 " " Always show the signcolumn, otherwise it would shift the text each time
 " " diagnostics appear/become resolved.
 " if has("patch-8.1.1564")

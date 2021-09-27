@@ -17,6 +17,7 @@ let s:nord_vim_version="0.18.0"
 set background=dark
 
 let s:nord0_gui = "#2e3440"
+let s:nord0_gui_bright = "#323845"
 let s:nord1_gui = "#3b4252"
 let s:nord2_gui = "#434c5e"
 let s:nord3_gui = "#4c566a"
@@ -167,7 +168,7 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+call s:hi("CursorLine", "", s:nord0_gui_bright, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord4_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
@@ -619,9 +620,9 @@ hi! link NERDTreeHelp Comment
 " BufTabline
 " > ap/vim-buftabline
 call s:hi("BufTablineCurrent", s:nord4_gui, s:nord10_gui, s:nord5_term, s:nord10_term, "NONE", "")
-call s:hi("BufTablineActive", s:nord3_gui_bright, s:nord2_gui, s:nord1_term, s:nord3_term, "", "")
+call s:hi("BufTablineActive", s:nord3_gui_bright, s:nord1_gui, s:nord1_term, s:nord3_term, "", "")
 hi! link BufTablineHidden BufTablineActive
-call s:hi("BufTablineFill", "", s:nord1_gui, "", s:nord1_term, "", "")
+call s:hi("BufTablineFill", "", s:nord0_gui_bright, "", s:nord1_term, "", "")
 
 " Floaterm
 " > 
