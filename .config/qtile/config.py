@@ -34,12 +34,9 @@ from libqtile import qtile
 mod = "mod4"
 terminal = "kitty"
 browser = "brave-browser-nightly"
-thunar = "thunar"
 nitrogen = "nitrogen"
 record = "simplescreenrecorder"
-spotify = "spotify"
 kdeconnect = "kdeconnect-app"
-sublime = "subl"
 oomox = "oomox-gui"
 office = "onlyoffice-desktopeditors"
 
@@ -92,10 +89,10 @@ keys = [
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch microsoft-edge-beta"),
-    Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
+    Key([mod], "s", lazy.spawn('spotify'), desc="Launch spotify"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
-    Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
+    Key([mod], "f", lazy.spawn('thunar'), desc="Launch thunar"),
     Key([mod], "d", lazy.spawn(office), desc="Launch office"),
 
     Key([mod], "o", lazy.spawn(oomox), desc="Launch oomox"),
@@ -188,17 +185,19 @@ screens = [
             [
                 widget.Image(filename='~/Pictures/signature.png', background=colors[7]),
                 widget.GroupBox(
-                    font= "DejaVu Sans",
-                    padding = 0,
+                    font= "Fira Code",
+                    # padding = 4,
                     active = colors[1],
                     inactive = colors[2],
-                    highlight_method = "block",
-                    highlight_color = colors[11],
-                    this_current_screen_border = colors[11],
+                    highlight_method = "line",
+                    borderwidth = 2,
+                    # rounded = 'false',
+                    highlight_color = colors[0],
+                    this_current_screen_border = colors[8],
                 ),
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.Prompt(),
-                # widget.WindowName(format='{state}', max_chars=10),
+                widget.WindowName(format='{name}', max_chars=20, foreground=colors[1]),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -211,15 +210,13 @@ screens = [
                 widget.Mpris2(
                     name='spotify',
                     font='VNF-Comic Sans',
-                   objname='org.mpris.MediaPlayer2.spotify',
+                    objname='org.mpris.MediaPlayer2.spotify',
                     display_metadata=['xesam:title', 'xesam:artist'],
-                    scroll_interval=0,
                     scroll_wait_intervals=10000,
-                    scroll_chars=10,
                     foreground= colors[4],
                 ),
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
@@ -227,7 +224,7 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={
@@ -235,7 +232,7 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     fontsize=17,
                     foreground= colors[4],
                     mouse_callbacks={

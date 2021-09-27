@@ -1,3 +1,8 @@
+# PLUGINS
+export ZSH='/home/toan/.config/zsh/.oh-my-zsh/'
+plugins=(git zsh-autosuggestions zsh-completions)
+source $ZSH/oh-my-zsh.sh
+
 # PROMPT 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -9,16 +14,6 @@ zstyle 'vcs_info:*' enable git
 PROMPT='%{$fg[white]%}[%{$fg[yellow]%}%n%{$fg_bold[red]%}@$reset_color%{$fg[blue]%}%M %{$fg_bold[cyan]%}%~$reset_color%{$fg[white]%}]%$ %{$fg[magenta]%}${vcs_info_msg_0_}
 %(?.%{$fg_bold[green]%} .%{$fg_bold[red]%} ) %{$reset_color%}'
 
-# PLUGINS
-export ZSH="/home/toan/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-completions)
-
-source $ZSH/oh-my-zsh.sh
-
-export EDITOR='nvim'
-export TERMINAL='xterm-kitty'
-export COLORTERM="truecolor"
-
 # ALIAS 
 # nvim aliases 
 alias vim='nvim'
@@ -28,7 +23,7 @@ alias nvi='nvim'
 
 #config aliases 
 alias cfv='nvim ~/.config/nvim/init.vim'
-alias zsh='nvim ~/.zshrc'
+alias zsh='nvim $ZDOTDIR/.zshrc'
 alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
 alias ktt='nvim ~/.config/kitty/theme.conf'
@@ -42,6 +37,8 @@ alias pacs='sudo pacman -Suy'
 alias yays='yay -Suy'
 alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
+alias spac='sudo pacman'
+
 
 # colorscript aliases
 alias clsl='colorscript -l'
@@ -60,6 +57,11 @@ alias la="exa -lgha --icons --group-directories-first"
 alias start='kdeconnect-cli -l'
 alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
 
+#GIT
+# alias gaa='git add --all'
+# alias gs='git status'
+# alias gcm='git commit -m'
+
 # (cat ~/.cache/wal/sequences &)
 # export GTK_IM_MODULE=ibus kitty 
 # export XMODIFIER=@im-ibus kitty
@@ -68,7 +70,7 @@ alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
 # pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 #HISTORY
-export HISTFILE=~/.zsh_history
+export HISTFILE=$ZDOTDIR/.zsh_history
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 setopt INC_APPEND_HISTORY
