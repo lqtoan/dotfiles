@@ -2,10 +2,11 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag' " Auto close HTML/XML tag
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/autocomplpop'
+Plug 'ervandew/supertab'
 
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -18,7 +19,6 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 
-Plug 'ervandew/supertab'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 
 Plug 'tpope/vim-commentary'
@@ -35,6 +35,16 @@ filetype plugin indent on
 autocmd BufEnter * :set scroll=5 
 syntax on
 
+" General settings
+set encoding=UTF-8
+set mouse=a
+set cindent
+set backspace=2
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set smarttab
+
 set hidden
 set noswapfile
 set nobackup
@@ -50,14 +60,6 @@ set ruler
 set number
 set relativenumber
 set cursorline
-" " Always show the signcolumn, otherwise it would shift the text each time
-" " diagnostics appear/become resolved.
-" if has("patch-8.1.1564")
-"   " Recently vim can merge signcolumn and number column into one
-"   set signcolumn=number
-" else
-"   set signcolumn=yes
-" endif
 
 " Tab charactor
 set listchars=tab:\|\ 
@@ -69,18 +71,8 @@ set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
 
-set encoding=UTF-8
-set mouse=a
-
 set incsearch
 set hlsearch
-
-set cindent
-set backspace=2
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
-" set smarttab
 
 set laststatus=2
 
@@ -91,6 +83,15 @@ set noshowmode
 set clipboard=unnamedplus
 
 "set ft=conf
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 "--------------------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<C-n>'
@@ -124,13 +125,25 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusShowClean = 1 " default: 0
 
+" COC Config -----------------------------------------
+" coc.vim config
+" Remap keys for gotos
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-"Theme
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <silent> rn <Plug>(coc-rename)
+
+" nnoremap R :CocCommand <CR>
+
+"Theme------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'nordone',
       \ 'active': {
@@ -163,12 +176,13 @@ let g:Hexokinase_signIcon = 'o'
 
 " Floaterm
 let g:floaterm_gitcommit='floaterm'
-let g:floaterm_autoinsert=1
-let g:floaterm_width=0.7
-let g:floaterm_height=0.8
+let g:floaterm_autoinsert=v:true
+let g:floaterm_width=0.5
+let g:floaterm_height=0.5
+let g:floaterm_position='bottomright'
 let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
-let g:floaterm_borderchars = ''
+let g:floaterm_borderchars = '─│─│┌┐┘└'
 let g:floaterm_keymap_toggle = 'ft'
 
 " Auto close tag
@@ -179,9 +193,10 @@ let g:jsx_ext_required = 0
 let g:user_emmet_node='n'
 let g:user_emmet_leader_key=','
 
+" :r is path, :t is filename
 " run python
 nnoremap <f1> <esc>:!python3 %<enter>
 " compile java program
-nnoremap <f2> <esc>:!javac % -g<enter>
+nnoremap <f2> <esc>:!javac %<enter>
 " run java
 nnoremap <f3> <esc>:!java %<enter>

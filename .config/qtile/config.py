@@ -32,13 +32,15 @@ from libqtile.lazy import lazy
 from libqtile import qtile
 
 mod = "mod4"
+
 terminal = "kitty"
-browser = "brave-browser-nightly"
-nitrogen = "nitrogen"
+browser = "brave"
+thunar = "thunar" #file manager
 record = "simplescreenrecorder"
 kdeconnect = "kdeconnect-app"
-oomox = "oomox-gui"
 office = "onlyoffice-desktopeditors"
+spotify = "spotify"
+
 
 colors = [
         "#2e3440",  # 0:background
@@ -88,15 +90,12 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "e", lazy.spawn(browser), desc="Launch microsoft-edge-beta"),
-    Key([mod], "s", lazy.spawn('spotify'), desc="Launch spotify"),
+    Key([mod], "e", lazy.spawn(browser), desc="Launch brave--browser-nightly"),
+    Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
-    Key([mod], "f", lazy.spawn('thunar'), desc="Launch thunar"),
+    Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
     Key([mod], "d", lazy.spawn(office), desc="Launch office"),
-
-    Key([mod], "o", lazy.spawn(oomox), desc="Launch oomox"),
-    Key([mod], "n", lazy.spawn(nitrogen), desc="Launch nitrogen"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
@@ -124,6 +123,7 @@ keys = [
 
     # Take a screenshot
     Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
+    Key([mod, "shift"], "s", lazy.spawn("scrot -s '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
 ]
 
 ################################################
@@ -194,9 +194,11 @@ screens = [
                     # rounded = 'false',
                     highlight_color = colors[0],
                     this_current_screen_border = colors[8],
+                    urgent_alert_method = 'line',
+                    urgent_border = colors[3]
                 ),
                 widget.CurrentLayoutIcon(scale=0.5),
-                widget.Prompt(),
+                widget.Prompt(foreground=colors[9]),
                 widget.WindowName(format='{name}', max_chars=20, foreground=colors[1]),
                 widget.Chord(
                     chords_colors={
@@ -206,7 +208,7 @@ screens = [
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Spacer(),
+                widget.Spacer(), 
                 widget.Mpris2(
                     name='spotify',
                     font='VNF-Comic Sans',
@@ -252,9 +254,9 @@ screens = [
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
                 widget.Volume(foreground=colors[6]),
                 widget.TextBox(text=' ', fontsize=16, foreground=colors[9]),
-                widget.Battery(format='{char}{percent:2.0%} W', foreground=colors[9], charge_char='', discharge_char='', full_char=''),
-
-                widget.Clock(format=' %a, %d/%m | %I:%M:%S %p', foreground=colors[3]),
+                widget.Battery(format='{percent:2.0%} W', foreground=colors[9]),
+                widget.Clock(format=' %a, %d/%m', foreground=colors[5]),
+                widget.Clock(format=' %I:%M:%S %p', foreground=colors[3]),
                 widget.Systray(background=colors[11]),
                 # widget.QuickExit(),
             ],

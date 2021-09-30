@@ -23,6 +23,7 @@ alias nvi='nvim'
 
 #config aliases 
 alias cfv='nvim ~/.config/nvim/init.vim'
+alias cfn='nvim ~/.config/nvim/colors/nord.vim'
 alias zsh='nvim $ZDOTDIR/.zshrc'
 alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
