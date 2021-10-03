@@ -199,7 +199,7 @@ screens = [
                 ),
                 widget.CurrentLayoutIcon(scale=0.5),
                 widget.Prompt(foreground=colors[9]),
-                widget.WindowName(format='{name}', max_chars=20, foreground=colors[1]),
+                widget.WindowName(format='{name}', max_chars=25, foreground=colors[7]),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),

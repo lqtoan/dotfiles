@@ -18,5 +18,5 @@ export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export IDEA_JDK=/opt/openjdk-bin-11
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export IDEA_JDK=/opt/openjdk-bin-11
+# export _JAVA_AWT_WM_NONREPARENTING=1

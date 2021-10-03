@@ -612,14 +612,14 @@ call s:hi("jediFat", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, s:und
 " NERDTree
 " > scrooloose/nerdtree
 call s:hi("NERDTreeExecFile", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("NERDTreeDir", s:nord13_gui, "", s:nord13_term, "", "", "")
-call s:hi("NERDTreeFile", s:nord14_gui, "", s:nord13_term, "", "", "")
+call s:hi("NERDTreeDir", s:nord10_gui, "", s:nord10_term, "", "", "")
+call s:hi("NERDTreeFile", s:nord4_gui, "", s:nord5_term, "", "", "")
 hi! link NERDTreeDirSlash Keyword
 hi! link NERDTreeHelp Comment
 
 " BufTabline
 " > ap/vim-buftabline
-call s:hi("BufTablineCurrent", s:nord4_gui, s:nord10_gui, s:nord5_term, s:nord10_term, "NONE", "")
+call s:hi("BufTablineCurrent", s:nord4_gui, s:nord10_gui, s:nord5_term, s:nord10_term, s:bold, "")
 call s:hi("BufTablineActive", s:nord3_gui_bright, s:nord1_gui, s:nord1_term, s:nord3_term, "", "")
 hi! link BufTablineHidden BufTablineActive
 call s:hi("BufTablineFill", "", s:nord0_gui_bright, "", s:nord1_term, "", "")
