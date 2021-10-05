@@ -183,7 +183,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Image(filename='~/Pictures/signature.png', background=colors[7]),
+                widget.Image(filename='~/Pictures/Wallpapers/signature.png', background=colors[7]),
                 widget.GroupBox(
                     font= "Fira Code",
                     # padding = 4,

@@ -38,7 +38,7 @@ alias pacs='sudo pacman -Suy'
 alias yays='yay -Suy'
 alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
-alias spac='sudo pacman'
+alias pac='sudo pacman'
 
 
 # colorscript aliases
