@@ -1,14 +1,13 @@
 # My Arch linux & Qtile window manager
-- Terminal: kitty
-- Shell: zsh
-- Text Editor: neovim, sublime-text-4
-- File Manager: thunar
-- Terminal File Manager: ranger
-- Browser: brave-browser-nightly
+- Terminal: Kitty
+- Shell: Zsh
+- Text Editor: Neovim
+- File Manager: Thunar (& ranger)
+- Browser: Brave
 - Office: OnlyOffice
-- Music Player: spotify
-- Image Viewer: viewnior
-- Video Viewer: vlc
+- Music Player: Spotify
+- Image Viewer: Viewnior
+- Video Viewer: Mpv
 - Kdeconnect
 - ...
 
