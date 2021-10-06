@@ -1,3 +1,4 @@
+![21-10-06-223450_screenshot](https://user-images.githubusercontent.com/89382043/136236193-fa02baaa-b56e-4a4d-9c77-82fba729f9da.jpg)
 # My Arch linux & Qtile window manager
 - Terminal: Kitty
 - Shell: Zsh
@@ -15,4 +16,5 @@
 ![21-10-06-221155_screenshot](https://user-images.githubusercontent.com/89382043/136232396-daef2660-f4f1-4241-8bfc-545db8fa51d3.jpg)
 ![21-10-06-221149_screenshot](https://user-images.githubusercontent.com/89382043/136232405-87b3a133-7834-468e-835f-f79703ec781c.jpg)
 ![21-10-06-221200_screenshot](https://user-images.githubusercontent.com/89382043/136232416-46fa7231-dcf5-4ab4-b9fb-6dfc32f0e5e8.jpg)
-![21-10-06-221204_screenshot](https://user-images.githubusercontent.com/89382043/136232428-ff95b051-f9a2-46b5-8799-8d77a29470a9.jpg)
+![21-10-06-223450_screenshot](https://user-images.githubusercontent.com/89382043/136236249-50c9a4fb-e1b1-40b1-9761-9c608da6a3b3.jpg)
+
