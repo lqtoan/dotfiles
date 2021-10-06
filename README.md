@@ -1,4 +1,3 @@
-![21-10-06-223450_screenshot](https://user-images.githubusercontent.com/89382043/136236193-fa02baaa-b56e-4a4d-9c77-82fba729f9da.jpg)
 # My Arch linux & Qtile window manager
 - Terminal: Kitty
 - Shell: Zsh
