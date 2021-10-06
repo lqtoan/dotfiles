@@ -12,8 +12,8 @@
 - Kdeconnect
 - ...
 
-![21-10-06-202423_screenshot](https://user-images.githubusercontent.com/89382043/136212577-86853e07-33f2-4827-8319-fe7f8af5de0e.jpg)
-![21-10-06-202428_screenshot](https://user-images.githubusercontent.com/89382043/136212619-cf9c6bf6-4879-4db1-892c-cdff59880c98.jpg)
-![21-10-06-202426_screenshot](https://user-images.githubusercontent.com/89382043/136212633-afda2d04-a826-48db-bee7-7bddbd4f258a.jpg)
-![21-10-06-203038_screenshot](https://user-images.githubusercontent.com/89382043/136212640-481f6611-8863-4bea-a06b-f1b29fc46195.jpg)
-![21-10-06-202516_screenshot](https://user-images.githubusercontent.com/89382043/136212648-bc96459f-0963-48bd-a4d0-4096e5512711.jpg)
+![21-10-06-221134_screenshot](https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg)
+![21-10-06-221155_screenshot](https://user-images.githubusercontent.com/89382043/136232396-daef2660-f4f1-4241-8bfc-545db8fa51d3.jpg)
+![21-10-06-221149_screenshot](https://user-images.githubusercontent.com/89382043/136232405-87b3a133-7834-468e-835f-f79703ec781c.jpg)
+![21-10-06-221200_screenshot](https://user-images.githubusercontent.com/89382043/136232416-46fa7231-dcf5-4ab4-b9fb-6dfc32f0e5e8.jpg)
+![21-10-06-221204_screenshot](https://user-images.githubusercontent.com/89382043/136232428-ff95b051-f9a2-46b5-8799-8d77a29470a9.jpg)
