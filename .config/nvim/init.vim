@@ -10,6 +10,8 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-scripts/autocomplpop'
 Plug 'ervandew/supertab'
 
+" Plug 'yuezk/vim-js'
+
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -34,7 +36,14 @@ filetype plugin on
 filetype plugin indent on
 
 autocmd BufEnter * :set scroll=5 
-autocmd VimEnter * NERDTree | wincmd p
+" Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 syntax on
 
 " General settings
@@ -51,7 +60,7 @@ set smarttab
 " set path+=.**
 
 set hidden
-" set showtabline=2
+set showtabline=1
 
 set noswapfile
 set nobackup
@@ -103,7 +112,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<C-n>'
 
 "NERDTree
-nmap t :NERDTreeToggle<CR>
+nmap nt :NERDTreeToggle<CR>
 map <C-i> :NERDTreeFind<CR>
 let g:NERDTreePatternMatchHighlightFullName = 1
 let NERDTreeAutoDeleteBuffer = 1
@@ -182,7 +191,6 @@ let g:Hexokinase_highlighters = ['virtual']
 let g:Hexokinase_ftAutoload = ['*']
 let g:Hexokinase_signIcon = 'o'
 
-" Floaterm
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=v:true
 let g:floaterm_width=0.6
