@@ -20,7 +20,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-floaterm'
 
 Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
+" Plug 'ap/vim-buftabline'
 
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 
@@ -60,7 +60,7 @@ set smarttab
 " set path+=.**
 
 set hidden
-set showtabline=1
+set showtabline=2
 
 set noswapfile
 set nobackup

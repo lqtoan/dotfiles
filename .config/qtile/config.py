@@ -70,10 +70,10 @@ keys = [
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"), 
+    Key([mod, "shift"], "h", lazy.layout.swap_column_left(), desc="Move window to the left"), 
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod, "shift"], "l", lazy.layout.shuffle_right(),desc="Move window to the right"),
+    Key([mod, "shift"], "l", lazy.layout.swap_column_right(), desc="Move window to the right"),
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
@@ -86,8 +86,9 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
+    Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
+    Key([mod], "n", lazy.layout.normalize()),    
+
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch brave--browser-nightly"),
@@ -122,7 +123,7 @@ keys = [
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # Take a screenshot
-    Key([], "Print", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
+    Key([mod], "p", lazy.spawn("scrot '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
     Key([mod, "shift"], "s", lazy.spawn("scrot -s '%y-%m-%d-%H%M%S_screenshot.jpg' -e 'mv $f ~/Pictures/'")),
 ]
 

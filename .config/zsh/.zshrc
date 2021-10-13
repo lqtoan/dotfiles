@@ -35,6 +35,7 @@ alias pgg='ping 8.8.8.8'
 alias pa='pavucontrol'
 alias pacc='paccache -rk0'
 alias pacs='sudo pacman -Suy'
+alias pacy='sudo pacman -Syyy'
 alias yays='yay -Suy'
 alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
@@ -49,7 +50,7 @@ alias cls10='colorscript -e 10'
 
 # modern unix
 alias cl="clear"
-alias cat='bat'
+# alias cat='bat'
 export BAT_THEME="base16"
 alias ls="exa -lgh --icons --group-directories-first"
 alias la="exa -lgha --icons --group-directories-first"
