@@ -2,7 +2,7 @@
 - Terminal: Kitty
 - Shell: Zsh
 - Text Editor: Neovim
-- File Manager: Thunar (& ranger)
+- File Manager: Thunar
 - Browser: Brave
 - Office: OnlyOffice
 - Music Player: Spotify
