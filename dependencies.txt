@@ -16,3 +16,11 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 
 sudo pacman -S pulseaudio-alsa pavucontrol playerctl
 pulseaudio -D
+
+yay -S spotify
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+yay -S spicetify-cli
+spicetify
+ln -sf ~/.dotfiles/.config/spicetify/Themes/SpicetifyDefault ~/.config/spicetify/Themes/SpicetifyDefault
+spicetify backup apply enable-devtool
