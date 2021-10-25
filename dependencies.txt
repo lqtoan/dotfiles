@@ -1,3 +1,10 @@
 sudo pacman -S git
 sudo pacman -S --needed base-devel
-
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg
+yay -S brave-bin
+sudo pacman -S thunar gvfs tumbler
+sudo pacman -S openssh
+ssh-keygen
+git clone 
