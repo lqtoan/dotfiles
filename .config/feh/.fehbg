@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/toan/.dotfiles/Pictures/Wallpapers/raindrops-2_FHD.jpg' 
