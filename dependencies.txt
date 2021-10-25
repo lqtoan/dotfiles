@@ -24,6 +24,5 @@ yay -S spicetify-cli
 spicetify
 ln -sf ~/.dotfiles/.config/spicetify/Themes/SpicetifyDefault ~/.config/spicetify/Themes/SpicetifyDefault
 spicetify backup apply enable-devtool
-https://lqtoan.github.io/homepage/
 spicetify config extensions fullAppDisplay.js
 spicetify apply
