@@ -30,3 +30,13 @@ spicetify apply
 sudo pacman -S python-pip
 pip install psutil
 pip install dbus-next
+
+sudo pacman -S neovim
+mkdir ~/.config/nvim
+ln -sf ~/.dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/.dotfiles/.config/nvim/colors ~/.config/nvim/colors
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
