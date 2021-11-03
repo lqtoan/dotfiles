@@ -38,6 +38,7 @@ browser = "brave"
 thunar = "thunar" #file manager
 record = "simplescreenrecorder"
 kdeconnect = "kdeconnect-app"
+code = "code"
 office = "onlyoffice-desktopeditors"
 spotify = "spotify"
 
@@ -94,7 +95,7 @@ keys = [
     Key([mod], "e", lazy.spawn(browser), desc="Launch brave--browser-nightly"),
     Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
-    Key([mod], "c", lazy.spawn(kdeconnect), desc="Launch kde connect"),
+    Key([mod], "c", lazy.spawn(code), desc="Launch code editor"),
     Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
     Key([mod], "d", lazy.spawn(office), desc="Launch office"),
 
@@ -131,7 +132,7 @@ keys = [
 #-----------GROUP                              #
 ################################################
 groups = [Group(i) for i in [
-    "1", "2", "3", "4",
+    "1", "2", "3", "4", "5",
 ]]
 
 for i, group in enumerate(groups):

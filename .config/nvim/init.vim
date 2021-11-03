@@ -25,6 +25,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'rrethy/vim-hexokinase', {'do': 'make hexokinase'}
 
 Plug 'tpope/vim-commentary'
+
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 source ~/.config/nvim/colors/lightline/nordone.vim
@@ -53,9 +55,9 @@ set autoindent
 set smartindent
 
 set backspace=2
-set tabstop=4
+set tabstop=2 " Chiều rộng của một thanh tab cứng được tính bằng 'khoảng trắng' - thực sự là chiều rộng (tối đa) của một ký tự tab thực tế.
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 " set path+=.**
 
@@ -107,6 +109,8 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "--------------------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<C-n>'
@@ -165,6 +169,7 @@ nmap <Leader>f :Format <CR>
 " Apply AutoFix to problem on the current line.
 nmap <leader>fc  <Plug>(coc-fix-current)
 
+nmap <C-p> <Plug>(Prettier)
 "Theme------------------------------------------------
 let g:lightline = {
 	\ 'colorscheme': 'nordone',
