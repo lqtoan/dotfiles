@@ -34,6 +34,7 @@ pip install dbus-next
 sudo pacman -S neovim
 sudo npm install neovim -g
 sudo pip install pynvim
+sudo pacman -S xclip
 mkdir ~/.config/nvim
 ln -sf ~/.dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/.config/nvim/colors ~/.config/nvim/colors
