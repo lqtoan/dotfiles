@@ -147,6 +147,17 @@ let g:gitgutter_map_keys = 0
 
 " COC Config -----------------------------------------
 " coc.vim config
+" coc config
+let g:coc_global_extensions = [
+	\ 'coc-html',
+	\ 'coc-css',
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
 " Remap keys for gotos
 " GoTo code navigation.
 nmap <silent>gd <Plug>(coc-definition)
