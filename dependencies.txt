@@ -31,6 +31,8 @@ sudo pacman -S python-pip
 pip install psutil
 pip install dbus-next
 
+sudo pacman -S xcape
+
 sudo pacman -S neovim
 sudo npm install neovim -g
 sudo pip install pynvim
