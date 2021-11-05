@@ -1,7 +1,7 @@
 # My Arch linux & Qtile window manager
 - Terminal: Kitty
 - Shell: Zsh
-- Text Editor: Neovim
+- Text Editor: Neovim & VS Code
 - File Manager: Thunar
 - Browser: Brave
 - Office: OnlyOffice
@@ -9,9 +9,12 @@
 - Image Viewer: Viewnior
 - Video Viewer: Mpv
 - Kdeconnect
+- Postman
 - ...
 
-(Read depencies.txt for more informations)
+Note: thêm vào /etc/zsh/zshenv 
+>export ZDOTDIR="$HOME/.config/zsh"
+
 ![21-10-06-221134_screenshot](https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg)
 ![21-10-06-221155_screenshot](https://user-images.githubusercontent.com/89382043/136232396-daef2660-f4f1-4241-8bfc-545db8fa51d3.jpg)
 ![21-10-06-221149_screenshot](https://user-images.githubusercontent.com/89382043/136232405-87b3a133-7834-468e-835f-f79703ec781c.jpg)
