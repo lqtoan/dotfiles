@@ -41,6 +41,8 @@ alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
 alias pac='sudo pacman'
 
+# mpv alias
+alias mpv='mpv "$(fzf)"'
 
 # colorscript aliases
 alias clsl='colorscript -l'
