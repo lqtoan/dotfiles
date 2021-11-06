@@ -39,7 +39,8 @@ thunar = "thunar" #file manager
 record = "simplescreenrecorder"
 kdeconnect = "kdeconnect-app"
 code = "code"
-office = "onlyoffice-desktopeditors"
+# office = "onlyoffice-desktopeditors"
+office = "libreoffice"
 spotify = "spotify"
 
 
