@@ -13,8 +13,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 
-sudo pacman -S pulseaudio-alsa pavucontrol playerctl
+sudo pacman -S pulseaudio-alsa pavucontrol playerctl brightnessctl
 pulseaudio -D
+sudo pacman -S mpv viewnior
+sudo pacman -S fzf
 
 yay -S spotify
 sudo chmod a+wr /opt/spotify
