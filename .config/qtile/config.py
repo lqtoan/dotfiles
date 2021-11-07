@@ -68,7 +68,7 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -196,7 +196,7 @@ screens = [
                     borderwidth = 2,
                     # rounded = 'false',
                     highlight_color = colors[0],
-                    this_current_screen_border = colors[8],
+                    this_current_screen_border = colors[7],
                     urgent_alert_method = 'line',
                     urgent_border = colors[3]
                 ),
@@ -296,6 +296,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),  # GPG key password entry
 ])
 auto_fullscreen = True
+# auto_fullscreen = False
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 

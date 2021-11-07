@@ -21,7 +21,7 @@ alias vi='nvim'
 alias nv='nvim'
 alias nvi='nvim'
 
-#config aliases 
+#nvim aliases 
 alias cfv='nvim ~/.config/nvim/init.vim'
 alias cfn='nvim ~/.config/nvim/colors/nord.vim'
 alias zsh='nvim $ZDOTDIR/.zshrc'
@@ -29,6 +29,9 @@ alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
 alias ktt='nvim ~/.config/kitty/theme.conf'
 alias xpf='nvim ~/.xprofile'
+
+#fzf alias
+alias code='code $(fzf) && exit'
 
 #other alias 
 alias pgg='ping 8.8.8.8'
@@ -40,9 +43,6 @@ alias yays='yay -Suy'
 alias pacq='sudo pacman -Rns $(pacman -Qtdq)'
 alias yayq='yay -Rns $(yay -Qtdq)'
 alias pac='sudo pacman'
-
-# mpv alias
-alias mpv='mpv "$(fzf)"'
 
 # colorscript aliases
 alias clsl='colorscript -l'
@@ -59,7 +59,7 @@ alias la="exa -lgha --icons --group-directories-first"
 alias htop='htop --sort-key=PERCENT_MEM'
 #KDE CONNECT
 alias start='kdeconnect-cli -l'
-alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
+alias share='kdeconnect-cli -n "Redmi Note 9S" --share "$(fzf)"'
 
 
 #GIT
@@ -84,4 +84,5 @@ setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
-clear 
+clear
+date
