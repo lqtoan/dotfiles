@@ -28,7 +28,7 @@ makepkg -si
 
 Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv
 sudo pacman -S openssh
 ssh-keygen
 ```
@@ -38,9 +38,7 @@ Clone dotfiles
 git clone git@github.com:lqtoan/dotfiles.git
 mkdir ~/.dotfiles
 mv ~/dotfiles/* ~/.dotfiles
-rm -R ~/.config/qtile
-mkdir ~/.config/qtile
-ln -sf ~/.dotfiles/.config/qtile/config.py ~/.config/qtile/config.py
+
 rm -R ~/.config/kitty
 ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
 rm -R ~/.config/neofetch
