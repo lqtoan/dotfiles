@@ -28,7 +28,9 @@ makepkg -si
 
 Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv fzf
+sudo pacman -S pulseaudio-alsa pavucontrol playerctl brightnessctl
+pulseaudio -D
 sudo pacman -S openssh
 ssh-keygen
 ```
