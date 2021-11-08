@@ -45,6 +45,11 @@ rm -R ~/.config/neofetch
 ln -sf ~/.dotfiles/.config/neofetch ~/.config/neofetch
 rm -R ~/.config/feh
 ln -sf ~/.dotfiles/.config/feh ~/.config/feh
+ln -sf ~/.dotfiles/.fonts ~/.fonts
+fc-cache -fv
+mkdir ~/{.themes,.icons}
+ln -sf ~/.dotfiles/.themes/dark ~/.themes/dark
+ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 ```
 Note: thêm vào /etc/zsh/zshenv 
 >export ZDOTDIR="$HOME/.config/zsh"
