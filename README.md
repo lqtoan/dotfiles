@@ -82,6 +82,10 @@ mkdir ~/.config/zsh
 ln -sf ~/.dotfiles/.config/zsh/.zshenv ~/.config/zsh/.zshenv
 ln -sf ~/.dotfiles/.config/zsh/.zprofile ~/.config/zsh/.zprofile
 ln -sf ~/.dotfiles/.config/zsh/.zshrc ~/.config/zsh/.zshrc
+ln -sf ~/.dotfiles/.config/zsh/.zsh_history ~/.config/zsh/.zsh_history
+```
+Note: tắt terminal, mở lại
+```sh
 cd ~/.config/zsh/
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
