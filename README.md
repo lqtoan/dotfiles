@@ -14,7 +14,7 @@
 - Postman
 - ...
 
-## Installation
+## Installations
 <details><summary>Click here!</summary>
 
 ### Install AUR Helper
@@ -29,24 +29,25 @@ makepkg -si
 
 ### Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior \
-mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still openssh python-pip \
-pulseaudio-alsa pavucontrol playerctl brightnessctl
-pulseaudio -D
-sudo pip install psutil
-sudo pip install dbus-next
-ssh-keygen
+yay -Syyy
+yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
 ```
 
 ### ... and somethings
 ```sh
-yay -Syyy
-yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
+viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still \
+simplescreenrecorder pacman-contrib ibus-pinyin zsh \
+pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip
+pulseaudio -D
+sudo pip install psutil
+sudo pip install dbus-next
 ```
 Note: thêm ssh-key vào Github
+>ssh-keygen
 >cd ~/.ssh<br>
 >cat id_rsa.pub<br>
->copy và dán vào Github
+>>copy và dán vào Github
        
 ### Clone dotfiles
 ```sh
@@ -71,9 +72,15 @@ ln -sf ~/.dotfiles/.themes/dark ~/.themes/dark
 ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 ```
 Note: dùng lxappearance để cài đặt font, theme, icon,...<br>
-Note: thêm vào /etc/zsh/zshenv trước
->export ZDOTDIR="$HOME/.config/zsh"
+Note:
+>chsh -s /bin/zsh<br>
+
+logout
+>sudo systemctl restart sddm<br>
+>sudo nvim /etc/zsh/zshenv<br>
+>>export ZDOTDIR="$HOME/.config/zsh"
 ```sh
+
 mkdir ~/.config/zsh
 ln -sf ~/.dotfile/.config/zsh/.zshenv ~/.config/zsh/.zshenv
 ln -sf ~/.dotfile/.config/zsh/.zrofile ~/.config/zsh/.zprofile
