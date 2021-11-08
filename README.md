@@ -20,6 +20,8 @@
 ### Install AUR Helper
 ```sh
 sudo pacman -Syyy
+sudo pacman -S reflector
+sudo reflector -c Vietnam --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S git
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/yay.git
