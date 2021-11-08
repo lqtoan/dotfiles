@@ -29,19 +29,20 @@ makepkg -si
 
 ### Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior \
-mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still simplescreenrecorder \
+yay -Syyy
+yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
+```
+
+### ... and somethings
+```sh
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
+viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still \
+simplescreenrecorder pacman-contrib ibus-pinyin \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip
 pulseaudio -D
 sudo pip install psutil
 sudo pip install dbus-next
 ssh-keygen
-```
-
-### ... and somethings
-```sh
-yay -Syyy
-yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
 ```
 Note: thêm ssh-key vào Github
 >cd ~/.ssh<br>
