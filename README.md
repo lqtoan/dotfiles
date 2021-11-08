@@ -2,7 +2,7 @@
 
 
 ## Application
-- Terminal: Kitty <a href="#Gallary"><img src="https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg" width="50%" align="right" /></a>
+- Terminal: Kitty<img src="https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg" width="50%" align="right" />
 - Shell: Zsh
 - Text Editor: Neovim & VS Code
 - File Manager: Thunar
@@ -14,7 +14,7 @@
 - Kdeconnect
 - Postman
 - ...
-
+<div style="background: red"><a href="#Gallary">Click here!</a></div>
 
 ## Installations
 <details><summary>Click here!</summary>
