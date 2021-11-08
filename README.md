@@ -43,7 +43,11 @@ ssh-keygen
 yay -Syyy
 yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
 ```
-
+Note: thêm ssh-key vào Github
+>cd ~/.ssh<br>
+>cat id_rsa.pub<br>
+>copy và dán vào Github
+       
 ### Clone dotfiles
 ```sh
 git clone git@github.com:lqtoan/dotfiles.git
@@ -65,6 +69,7 @@ mkdir ~/{.themes,.icons}
 ln -sf ~/.dotfiles/.themes/dark ~/.themes/dark
 ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 ```
+Note: dùng lxappearance để cài đặt font, theme, icon,...<br>
 Note: thêm vào /etc/zsh/zshenv trước
 >export ZDOTDIR="$HOME/.config/zsh"
 ```sh
@@ -72,7 +77,7 @@ mkdir ~/.config/zsh
 ln -sf ~/.dotfile/.config/zsh/.zshenv ~/.config/zsh/.zshenv
 ln -sf ~/.dotfile/.config/zsh/.zrofile ~/.config/zsh/.zprofile
 ln -sf ~/.dotfile/.config/zsh/.zshrc ~/.config/zsh/.zshrc
-cd ~/.config/zsh
+cd ~/.config/zsh/
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
