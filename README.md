@@ -17,7 +17,7 @@
 ## Installation
 <details><summary>Click here!</summary>
 
-Install AUR Helper
+### Install AUR Helper
 ```sh
 sudo pacman -Syyy
 sudo pacman -S git
@@ -27,19 +27,24 @@ cd yay
 makepkg -si
 ```
 
-Install somethings
+### Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv fzf neovim xcape xclip
-sudo pacman -S pulseaudio-alsa pavucontrol playerctl brightnessctl
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior \
+mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still openssh python-pip \
+pulseaudio-alsa pavucontrol playerctl brightnessctl
 pulseaudio -D
-sudo pacman -S openssh
-ssh-keygen
-sudo pacman -S python-pip
 sudo pip install psutil
 sudo pip install dbus-next
+ssh-keygen
 ```
 
-Clone dotfiles
+### ... and somethings
+```sh
+yay -Syyy
+yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
+```
+
+### Clone dotfiles
 ```sh
 git clone git@github.com:lqtoan/dotfiles.git
 mv ~/dotfiles ~/.dotfiles
@@ -73,7 +78,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_C
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 ```
 
-Neovim
+### Neovim
 ```sh
 sudo npm install neovim -g
 sudo pip install pynvim
@@ -84,7 +89,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
   
-Spotify
+### Spotify
 ```sh
 yay -S spotify
 sudo chmod a+wr /opt/spotify
@@ -96,7 +101,6 @@ spicetify backup apply enable-devtool
 spicetify config extensions fullAppDisplay.js
 spicetify apply
 ```
-
 </details>
 
 ## Gallery
