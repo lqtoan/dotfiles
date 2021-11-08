@@ -28,12 +28,25 @@ makepkg -si
 
 Install somethings
 ```sh
-
+sudo pacman -S thunar gvfs tumbler
+sudo pacman -S openssh
+ssh-keygen
 ```
 
 Clone dotfiles
 ```sh
-
+git clone git@github.com:lqtoan/dotfiles.git
+mkdir ~/.dotfiles
+mv ~/dotfiles/* ~/.dotfiles
+rm -R ~/.config/qtile
+mkdir ~/.config/qtile
+ln -sf ~/.dotfiles/.config/qtile/config.py ~/.config/qtile/config.py
+rm -R ~/.config/kitty
+ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
+rm -R ~/.config/neofetch
+ln -sf ~/.dotfiles/.config/neofetch ~/.config/neofetch
+rm -R ~/.config/feh
+ln -sf ~/.dotfiles/.config/feh ~/.config/feh
 ```
 Note: thêm vào /etc/zsh/zshenv 
 >export ZDOTDIR="$HOME/.config/zsh"
