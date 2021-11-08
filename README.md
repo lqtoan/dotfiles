@@ -44,7 +44,7 @@ sudo pip install psutil
 sudo pip install dbus-next
 ```
 Note: thêm ssh-key vào Github
->ssh-keygen
+>ssh-keygen<br>
 >cd ~/.ssh<br>
 >cat id_rsa.pub<br>
 >>copy và dán vào Github
@@ -74,17 +74,14 @@ ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 Note: dùng lxappearance để cài đặt font, theme, icon,...<br>
 Note:
 >chsh -s /bin/zsh<br>
-
-logout
 >sudo systemctl restart sddm<br>
 >sudo nvim /etc/zsh/zshenv<br>
 >>export ZDOTDIR="$HOME/.config/zsh"
 ```sh
-
 mkdir ~/.config/zsh
-ln -sf ~/.dotfile/.config/zsh/.zshenv ~/.config/zsh/.zshenv
-ln -sf ~/.dotfile/.config/zsh/.zrofile ~/.config/zsh/.zprofile
-ln -sf ~/.dotfile/.config/zsh/.zshrc ~/.config/zsh/.zshrc
+ln -sf ~/.dotfiles/.config/zsh/.zshenv ~/.config/zsh/.zshenv
+ln -sf ~/.dotfiles/.config/zsh/.zprofile ~/.config/zsh/.zprofile
+ln -sf ~/.dotfiles/.config/zsh/.zshrc ~/.config/zsh/.zshrc
 cd ~/.config/zsh/
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
