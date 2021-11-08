@@ -65,7 +65,8 @@ rm -R ~/.config/feh
 ln -sf ~/.dotfiles/.config/feh ~/.config/feh
 ln -sf ~/.dotfiles/.fonts ~/.fonts
 fc-cache -fv
-mkdir ~/{.themes,.icons}
+mkdir ~/.themes
+mkdir ~/.icons
 ln -sf ~/.dotfiles/.themes/dark ~/.themes/dark
 ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 ```
@@ -93,7 +94,10 @@ ln -sf ~/.dotfiles/.config/nvim/colors ~/.config/nvim/colors
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-  
+Note: cài các plugin
+>nvim<br>
+>:PlugInstall
+
 ### Spotify
 ```sh
 yay -S spotify
