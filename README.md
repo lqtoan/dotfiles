@@ -118,7 +118,12 @@ spicetify backup apply enable-devtool
 spicetify config extensions fullAppDisplay.js
 spicetify apply
 ```
+Make pacman more fun
+>sudo nvim /etc/pacman.conf
+>>Color<br>
+>>ILoveCandy
 </details>
+
 
 ## Gallery
 
