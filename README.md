@@ -19,6 +19,7 @@
 
 Install AUR Helper
 ```sh
+sudo pacman -Syyy
 sudo pacman -S git
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -28,18 +29,20 @@ makepkg -si
 
 Install somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv fzf
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior mpv fzf neovim xcape xclip
 sudo pacman -S pulseaudio-alsa pavucontrol playerctl brightnessctl
 pulseaudio -D
 sudo pacman -S openssh
 ssh-keygen
+sudo pacman -S python-pip
+sudo pip install psutil
+sudo pip install dbus-next
 ```
 
 Clone dotfiles
 ```sh
 git clone git@github.com:lqtoan/dotfiles.git
-mkdir ~/.dotfiles
-mv ~/dotfiles/* ~/.dotfiles
+mv ~/dotfiles ~/.dotfiles
 rm -R ~/.config/qtile
 mkdir ~/.config/qtile
 ln -sf ~/.dotfiles/.config/qtile/config.py ~/.config/qtile/config.py
@@ -48,6 +51,7 @@ rm -R ~/.config/kitty
 ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
 rm -R ~/.config/neofetch
 ln -sf ~/.dotfiles/.config/neofetch ~/.config/neofetch
+ln -sf ~/.dotfiles/Pictures/Wallpapers ~/Pictures/Wallpapers
 rm -R ~/.config/feh
 ln -sf ~/.dotfiles/.config/feh ~/.config/feh
 ln -sf ~/.dotfiles/.fonts ~/.fonts
@@ -71,6 +75,13 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
 
 Neovim
 ```sh
+sudo npm install neovim -g
+sudo pip install pynvim
+mkdir ~/.config/nvim
+ln -sf ~/.dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/.dotfiles/.config/nvim/colors ~/.config/nvim/colors
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
   
 Spotify
