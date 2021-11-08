@@ -1,7 +1,8 @@
 # My Arch linux & Qtile window manager
 
+
 ## Application
-- Terminal: Kitty
+- Terminal: Kitty<img src="https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg" width="50%" align="right" />
 - Shell: Zsh
 - Text Editor: Neovim & VS Code
 - File Manager: Thunar
@@ -13,6 +14,7 @@
 - Kdeconnect
 - Postman
 - ...
+
 
 ## Installations
 <details><summary>Click here!</summary>
@@ -129,7 +131,7 @@ Make pacman more fun
 >>ILoveCandy
 </details>
 
-## Gallery
+## Gallary
 
 ![21-10-06-221134_screenshot](https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg)
 ![21-10-06-221155_screenshot](https://user-images.githubusercontent.com/89382043/136232396-daef2660-f4f1-4241-8bfc-545db8fa51d3.jpg)
