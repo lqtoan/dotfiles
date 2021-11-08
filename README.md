@@ -30,8 +30,8 @@ makepkg -si
 ### Install somethings
 ```sh
 sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 viewnior \
-mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still openssh python-pip \
-pulseaudio-alsa pavucontrol playerctl brightnessctl
+mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still simplescreenrecorder \
+pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip
 pulseaudio -D
 sudo pip install psutil
 sudo pip install dbus-next
