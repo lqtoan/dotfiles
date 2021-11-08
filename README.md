@@ -14,7 +14,7 @@
 - Postman
 - ...
 
-## Installation
+## Installations
 <details><summary>Click here!</summary>
 
 ### Install AUR Helper
@@ -74,8 +74,10 @@ ln -sf ~/.dotfiles/.icons/dark ~/.icons/dark
 Note: dùng lxappearance để cài đặt font, theme, icon,...<br>
 Note:
 >chsh -s /bin/zsh<br>
->logout
->sudo /etc/zsh/zshenv<br>
+
+logout
+>sudo systemctl restart sddm<br>
+>sudo nvim /etc/zsh/zshenv<br>
 >>export ZDOTDIR="$HOME/.config/zsh"
 ```sh
 
