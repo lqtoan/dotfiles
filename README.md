@@ -37,11 +37,12 @@ yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
 ```sh
 sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
 viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still \
-simplescreenrecorder pacman-contrib ibus-pinyin zsh \
+simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip
 pulseaudio -D
 sudo pip install psutil
 sudo pip install dbus-next
+sudo pip install pillow
 ```
 Note: thêm ssh-key vào Github
 >ssh-keygen<br>
