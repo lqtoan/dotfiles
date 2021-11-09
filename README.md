@@ -79,11 +79,7 @@ Note:
 >sudo nvim /etc/zsh/zshenv<br>
 >>export ZDOTDIR="$HOME/.config/zsh"
 ```sh
-mkdir ~/.config/zsh
-ln -sf ~/.dotfiles/.config/zsh/.zshenv ~/.config/zsh/.zshenv
-ln -sf ~/.dotfiles/.config/zsh/.zprofile ~/.config/zsh/.zprofile
-ln -sf ~/.dotfiles/.config/zsh/.zshrc ~/.config/zsh/.zshrc
-ln -sf ~/.dotfiles/.config/zsh/.zsh_history ~/.config/zsh/.zsh_history
+ln -sf ~/.dotfiles/.config/zsh ~/.config/zsh
 ```
 Note: tắt terminal, mở lại
 ```sh
