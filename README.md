@@ -113,6 +113,8 @@ sudo chmod a+wr /opt/spotify/Apps -R
 yay -S spicetify-cli
 spicetify
 ln -sf ~/.dotfiles/.config/spicetify/Themes/SpicetifyDefault ~/.config/spicetify/Themes/SpicetifyDefault
+rm -R ~/.config/spicetify/Extensions
+ln -sf ~/.dotfiles/.config/spicetify/Extensions ~/.config/spicetify/Extensions
 spicetify backup apply enable-devtool
 spicetify config extensions fullAppDisplay.js
 spicetify apply
