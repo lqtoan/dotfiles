@@ -125,7 +125,7 @@ Make pacman more fun
 >>ILoveCandy
 </details>
 
-## Gallary
+## Gallery
 
 ![21-10-06-221134_screenshot](https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg)<br>
 ![21-10-06-221155_screenshot](https://user-images.githubusercontent.com/89382043/136232396-daef2660-f4f1-4241-8bfc-545db8fa51d3.jpg)<br>
