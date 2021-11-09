@@ -56,8 +56,7 @@ Note: thêm ssh-key vào Github
 git clone git@github.com:lqtoan/dotfiles.git
 mv ~/dotfiles ~/.dotfiles
 rm -R ~/.config/qtile
-mkdir ~/.config/qtile
-ln -sf ~/.dotfiles/.config/qtile/config.py ~/.config/qtile/config.py
+ln -sf ~/.dotfiles/.config/qtile ~/.config/qtile
 ln -sf ~/.dotfiles/.xprofile ~/.xprofile
 rm -R ~/.config/kitty
 ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
