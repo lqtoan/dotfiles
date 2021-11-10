@@ -15,13 +15,13 @@
 - ...
 
 ## Installations
-<details><summary>Click here!</summary>
-
+<details><summary>Click here!</summary>      
+Note: thêm mirror vào /etc/pacman.d/mirrorlist
+       
+>Server = http://mirror.bizflycloud.vn/archlinux/$repo/os/$arch<br>
 ### Install AUR Helper
 ```sh
 sudo pacman -Syyy
-sudo pacman -S reflector
-sudo reflector -c Vietnam --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -S git
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/yay.git
