@@ -90,8 +90,8 @@ Note: tắt terminal, mở lại
 ```sh
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
-```
-
+```       
+       
 ### Neovim
 ```sh
 sudo npm install neovim -g
@@ -105,6 +105,22 @@ Note: cài các plugin
 >nvim<br>
 >:PlugInstall
 
+### Develop
+#### Angular
+```sh
+sudo npm install npm
+sudo npm update npm
+sudo npm install -g @angular/cli@11.2.7
+ng --version
+```
+#### PostgreSQL
+```sh
+sudo pacman -S postgresql
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+postgres --version
+```
+       
 ### Spotify
 ```sh
 yay -S spotify
