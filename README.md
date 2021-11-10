@@ -15,7 +15,7 @@
 - ...
 
 ## Installations
-<details><summary>Click here!</summary>      
+
 Note: thêm mirror vào /etc/pacman.d/mirrorlist
        
 >Server = http://mirror.bizflycloud.vn/archlinux/$repo/os/$arch<br>
@@ -139,7 +139,6 @@ Make pacman more fun
 >sudo nvim /etc/pacman.conf
 >>Color<br>
 >>ILoveCandy
-</details>
 
 ## Gallery
 
