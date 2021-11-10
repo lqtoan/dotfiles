@@ -1,6 +1,6 @@
 # My Arch linux & Qtile window manager
 
-## Application
+## Applications
 - Terminal: Kitty
 - Shell: Zsh
 - Text Editor: Neovim & VS Code
