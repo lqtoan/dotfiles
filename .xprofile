@@ -12,7 +12,12 @@ setxkbmap -option ctrl:nocaps,shift:both_capslock
 killall xcape 2>/dev/null ; xcape
 
 export GTK_IM_MODULE=ibus
-export XMODIFIER=@im-ibus
 export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+# Dành cho những phần mềm dựa trên qt4
+export QT4_IM_MODULE=ibus
+# Dành cho những phần mềm dùng thư viện đồ họa clutter/OpenGL
+export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
+
 pidof ibus-daemon > /dev/null || ibus-daemon -drx

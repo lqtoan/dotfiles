@@ -24,7 +24,8 @@ alias nvi='nvim'
 #nvim aliases 
 alias cfv='nvim ~/.config/nvim/init.vim'
 alias cfn='nvim ~/.config/nvim/colors/nord.vim'
-alias zsh='nvim $ZDOTDIR/.zshrc'
+alias zrc='nvim $ZDOTDIR/.zshrc'
+alias zenv='nvim $ZDOTDIR/.zshenv'
 alias qt='nvim ~/.config/qtile/config.py'
 alias kt='nvim ~/.config/kitty/kitty.conf'
 alias ktt='nvim ~/.config/kitty/theme.conf'
@@ -32,6 +33,7 @@ alias xpf='nvim ~/.xprofile'
 
 #fzf alias
 alias code='code $(fzf) && exit'
+alias mpv='mpv "$(fzf)"'
 
 #other alias 
 alias pgg='ping 8.8.8.8'

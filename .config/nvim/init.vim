@@ -81,7 +81,7 @@ set relativenumber
 set cursorline
 
 " Tab charactor
-set listchars=tab:\|\ 
+set listchars=tab:\│\ 
 set list
 
 set updatetime=300
