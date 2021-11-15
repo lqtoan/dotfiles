@@ -1,6 +1,6 @@
 # My Arch linux & Qtile window manager
 
-## Application
+## Applications
 - Terminal: Kitty
 - Shell: Zsh
 - Text Editor: Neovim & VS Code
@@ -15,7 +15,7 @@
 - ...
 
 ## Installations
-<details><summary>Click here!</summary>      
+
 Note: thêm mirror vào /etc/pacman.d/mirrorlist
        
 >Server = http://mirror.bizflycloud.vn/archlinux/$repo/os/$arch<br>
@@ -139,7 +139,6 @@ Make pacman more fun
 >sudo nvim /etc/pacman.conf
 >>Color<br>
 >>ILoveCandy
-</details>
 
 ## Gallery
 
