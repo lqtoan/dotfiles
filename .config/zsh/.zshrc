@@ -63,6 +63,8 @@ alias htop='htop --sort-key=PERCENT_MEM'
 alias start='kdeconnect-cli -l'
 alias share='kdeconnect-cli -n "Redmi Note 9S" --share "$(fzf)"'
 
+# build and deploy Angular
+alias bnd='npm run build && firebase deploy --only hosting'
 
 #GIT
 # alias gaa='git add --all'
