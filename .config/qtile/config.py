@@ -43,21 +43,19 @@ office = "onlyoffice-desktopeditors"
 # office = "libreoffice"
 spotify = "spotify"
 
-
-colors = [
-        "#2e3440",  # 0:background
-        "#Eceff4",  # 1:active
-        "#7c818c",  # 2:inactive
-        "#BF616A",  # 3:red 
-        "#A3BE8C",  # 4:green
-        "#d08770",  # 5:orange
-        "#ebcb8b",  # 6:yellow
-        "#5e81ac",  # 7:dark_blue
-        "#81a1c1",  # 8:blue
-        "#B48EAD",  # 9:magenta
-        "#88c0d0",  # 10:cyan
-        "#3b4252",  # 11:selection
-        ]  
+#colors
+background = "#2e3440"  # 0:background
+active = "#Eceff4"  # 1:active
+inactive = "#7c818c"  # 2:inactive
+red = "#BF616A" # 3:red 
+green = "#A3BE8C"  # 4:green
+orange = "#d08770"  # 5:orange
+yellow = "#ebcb8b"  # 6:yellow
+dark_blue = "#5e81ac"  # 7:dark_blue
+blue = "#81a1c1"  # 8:blue
+magenta = "#B48EAD"  # 9:magenta
+cyan = "#88c0d0"  # 10:cyan
+selection = "#3b4252"  # 11:selection
 
 ################################################
 #-----------KEY                                #
@@ -149,8 +147,8 @@ for i, group in enumerate(groups):
 #-----------LAYOUT                             #
 ################################################
 layout_conf = { 
-    "border_focus": colors[8],
-    "border_normal": colors[0],
+    "border_focus": blue,
+    "border_normal": background,
     "margin": 3,
     "border_width": 2
 }
@@ -178,89 +176,89 @@ widget_defaults = dict(
     font = "Comic Sans MS",
     fontsize = 13,
     padding = 3,
-    background = colors[0]
+    background = background
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        top=bar.Bar(
+        top = bar.Bar(
             [
-                widget.Image(filename='~/Pictures/Wallpapers/signature.png', background=colors[7]),
+                widget.Image(filename='~/Pictures/Wallpapers/signature.png', background = dark_blue),
                 widget.GroupBox(
                     font= "Fira Code",
                     # padding = 4,
-                    active = colors[1],
-                    inactive = colors[2],
+                    active = active,
+                    inactive = inactive,
                     highlight_method = "line",
                     borderwidth = 2,
                     # rounded = 'false',
-                    highlight_color = colors[0],
-                    this_current_screen_border = colors[7],
+                    highlight_color = background,
+                    this_current_screen_border = dark_blue,
                     urgent_alert_method = 'line',
-                    urgent_border = colors[3]
+                    urgent_border = red
                 ),
-                widget.CurrentLayoutIcon(scale=0.5),
-                widget.Prompt(foreground=colors[9]),
-                widget.WindowName(format='{name}', max_chars=25, foreground=colors[7]),
+                widget.CurrentLayoutIcon(scale = 0.5),
+                widget.Prompt(foreground = magenta),
+                widget.WindowName(format = '{name}', max_chars = 25, foreground = dark_blue),
                 widget.Chord(
-                    chords_colors={
+                    chords_colors = {
                         'launch': ("#ff0000", "#ffffff"),
                     },
-                    name_transform=lambda name: name.upper(),
+                    name_transform = lambda name: name.upper(),
                 ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Spacer(), 
                 widget.Mpris2(
-                    name='spotify',
-                    font='VNF-Comic Sans',
-                    objname='org.mpris.MediaPlayer2.spotify',
-                    display_metadata=['xesam:title', 'xesam:artist'],
-                    scroll_wait_intervals=10000,
-                    foreground= colors[4],
+                    name = 'spotify',
+                    font = 'VNF-Comic Sans',
+                    objname = 'org.mpris.MediaPlayer2.spotify',
+                    display_metadata = ['xesam:title', 'xesam:artist'],
+                    scroll_wait_intervals = 10000,
+                    foreground = green,
                 ),
                 widget.TextBox(
-                    text=' ',
-                    fontsize=17,
-                    foreground= colors[4],
-                    mouse_callbacks={
+                    text = ' ',
+                    fontsize = 17,
+                    foreground = green,
+                    mouse_callbacks = {
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify previous')
                         }
                     ),
                 widget.TextBox(
-                    text=' ',
-                    fontsize=17,
-                    foreground= colors[4],
-                    mouse_callbacks={
+                    text = ' ',
+                    fontsize = 17,
+                    foreground = green,
+                    mouse_callbacks = {
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify play-pause') 
                         }
                     ),
                 widget.TextBox(
-                    text=' ',
-                    fontsize=17,
-                    foreground= colors[4],
+                    text = ' ',
+                    fontsize = 17,
+                    foreground = green,
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify next')
                         }
                     ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[8]),
+                widget.TextBox(text = ' ', fontsize = 16, foreground = blue),
                 widget.CPU(
-                    foreground=colors[8], 
+                    foreground= blue, 
                     format='{freq_current} GHz {load_percent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[10]),
+                widget.TextBox(text = ' ', fontsize = 16, foreground = cyan),
                 widget.Memory(
-                    foreground=colors[10],
-                    format='{MemUsed:.0f} {mm} {MemPercent}%'
+                    foreground = cyan,
+                    format = '{MemUsed:.0f} {mm} {MemPercent}%'
                 ),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[6]),
-                widget.Volume(foreground=colors[6]),
-                widget.TextBox(text=' ', fontsize=16, foreground=colors[9]),
-                widget.Battery(format='{char}{percent:2.0%}W', foreground=colors[9]),
-                widget.Clock(format=' %a, %d/%m', foreground=colors[5]),
-                widget.Clock(format=' %I:%M:%S %p', foreground=colors[3]),
-                widget.Systray(background=colors[11]),
+                widget.TextBox(text = ' ', fontsize = 16, foreground = yellow),
+                widget.Volume(foreground = yellow),
+                widget.TextBox(text=' ', fontsize = 16, foreground = magenta),
+                widget.Battery(format = '{char}{percent:2.0%}W', foreground = magenta),
+                widget.Clock(format = ' %a, %d/%m', foreground = orange),
+                widget.Clock(format=' %I:%M:%S %p', foreground = red),
+                widget.Systray(background = selection),
                 # widget.QuickExit(),
             ],
             24, margin = [0, 0, 3, 0],
