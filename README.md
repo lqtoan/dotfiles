@@ -96,7 +96,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTO
        
 ### Neovim
 ```sh
-sudo npm install neovim -g
+sudo npm install -g neovim
 sudo pip install pynvim
 rm -R ~/.config/nvim
 ln -sf ~/.dotfiles/.config/nvim ~/.config/nvim
@@ -108,10 +108,15 @@ Note: cài các plugin
 >:PlugInstall
 
 ### Develop
+#### JavaScript
+```sh
+sudo npm install -g npm
+sudo npm update -g npm
+sudo npm install -g sass
+sudo npm install -g json-server
+```
 #### Angular
 ```sh
-sudo npm install npm
-sudo npm update npm
 sudo npm install -g @angular/cli@11.2.7
 ng --version
 ```
