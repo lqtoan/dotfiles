@@ -1,13 +1,11 @@
 call plug#begin('~/.config/nvim/bundle')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neovim/nvim-lspconfig'
 
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag' " Auto close HTML/XML tag
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
-Plug 'vim-scripts/autocomplpop'
+" Plug 'vim-scripts/AutoComplPop'
 Plug 'ervandew/supertab'
 
 " Plug 'yuezk/vim-js'
@@ -53,8 +51,8 @@ set encoding=UTF-8
 set mouse=a
 set autoindent
 set smartindent
+set backspace=2 " Backspace deletes like most programs in insert mode
 
-set backspace=2
 set tabstop=2 " Chiều rộng của một thanh tab cứng được tính bằng 'khoảng trắng' - thực sự là chiều rộng (tối đa) của một ký tự tab thực tế.
 set softtabstop=0
 set shiftwidth=2
@@ -69,10 +67,10 @@ set nobackup
 set nowritebackup
 set autoread
 set autowrite
-set history=5000
+set history=100
 set undolevels=5000
 
-set noshowcmd
+set showcmd
 set cmdheight=2
 
 set ruler
@@ -83,6 +81,10 @@ set cursorline
 " Tab charactor
 set listchars=tab:\│\ 
 set list
+
+" Make it obvious where 80 characters is
+set textwidth=100
+set colorcolumn=+1
 
 set updatetime=300
 
@@ -95,9 +97,12 @@ set hlsearch
 
 set laststatus=2
 
-" set background=dark
 set termguicolors
 set noshowmode
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 " Enable copying from vim to clipboard
 set clipboard=unnamedplus
@@ -143,6 +148,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 	\ }
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusShowClean = 1 " default: 0
+" let g:NERDTreeBookmarksFile = '$HOME/.config/.NERDTreeBookmarks'
 
 let g:gitgutter_map_keys = 0
 
@@ -199,6 +205,7 @@ let g:lightline = {
 	\ },
 	\ }
 colorscheme nord
+let g:nord_italic_comments = 1
 
 " Hexokinase_v2
 let g:Hexokinase_v2 = 0

@@ -25,7 +25,6 @@
 # SOFTWARE.
 
 from typing import List  # noqa: F401
-
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -149,18 +148,18 @@ for i, group in enumerate(groups):
 layout_conf = { 
     "border_focus": blue,
     "border_normal": background,
-    "margin": 3,
+    "margin": 2,
     "border_width": 2
 }
 
 layouts = [
     layout.Columns(**layout_conf),
-    # layout.Bsp(**layout_conf),
     layout.Floating(**layout_conf),
+    # layout.MonadTall(**layout_conf),
+    # layout.Bsp(**layout_conf),
     # layout.Max(),
     # layout.Stack(num_stacks=2, autosplit='true', fair='true', **layout_conf),
     # layout.Matrix(),
-    # layout.MonadTall(**layout_conf),
     # layout.MonadWide(),
     # layout.RatioTile(**layout_conf),
     # layout.Tile(**layout_conf),
@@ -174,8 +173,8 @@ layouts = [
 ################################################
 widget_defaults = dict(
     font = "Comic Sans MS",
-    fontsize = 13,
-    padding = 3,
+    fontsize = 12,
+    padding = 2,
     background = background
 )
 extension_defaults = widget_defaults.copy()
@@ -186,8 +185,8 @@ screens = [
             [
                 widget.Image(filename='~/Pictures/Wallpapers/signature.png', background = dark_blue),
                 widget.GroupBox(
-                    font= "Fira Code",
-                    # padding = 4,
+                    font= "CaskaydiaCove Nerd Font",
+                    # padding = 3,
                     active = active,
                     inactive = inactive,
                     highlight_method = "line",
@@ -219,7 +218,7 @@ screens = [
                     foreground = green,
                 ),
                 widget.TextBox(
-                    text = ' ',
+                    text = '',
                     fontsize = 17,
                     foreground = green,
                     mouse_callbacks = {
@@ -227,7 +226,7 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text = ' ',
+                    text = '',
                     fontsize = 17,
                     foreground = green,
                     mouse_callbacks = {
@@ -235,7 +234,7 @@ screens = [
                         }
                     ),
                 widget.TextBox(
-                    text = ' ',
+                    text = '',
                     fontsize = 17,
                     foreground = green,
                     mouse_callbacks={
@@ -261,11 +260,11 @@ screens = [
                 widget.Systray(background = selection),
                 # widget.QuickExit(),
             ],
-            24, margin = [0, 0, 3, 0],
+            24, margin = [0, 0, 2, 0],
         ),
-        bottom=bar.Gap(3),
-        left=bar.Gap(3),
-        right=bar.Gap(3),
+        bottom=bar.Gap(2),
+        left=bar.Gap(2),
+        right=bar.Gap(2),
     ),
 ]
 

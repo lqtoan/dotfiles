@@ -32,8 +32,7 @@ alias ktt='nvim ~/.config/kitty/theme.conf'
 alias xpf='nvim ~/.xprofile'
 
 #fzf alias
-alias code='code $(fzf) && exit'
-alias mpv='mpv "$(fzf)"'
+alias fzf='"$(fzf)"'
 
 #other alias 
 alias pgg='ping 8.8.8.8'
@@ -61,15 +60,11 @@ alias la="exa -lgha --icons --group-directories-first"
 alias htop='htop --sort-key=PERCENT_MEM'
 #KDE CONNECT
 alias start='kdeconnect-cli -l'
-alias share='kdeconnect-cli -n "Redmi Note 9S" --share "$(fzf)"'
+alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
 
 # build and deploy Angular
 alias bnd='npm run build && firebase deploy --only hosting'
 
-#GIT
-# alias gaa='git add --all'
-# alias gs='git status'
-# alias gcm='git commit -m'
 
 # (cat ~/.cache/wal/sequences &)
 # export GTK_IM_MODULE=ibus kitty 
