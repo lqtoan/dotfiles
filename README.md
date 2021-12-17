@@ -112,8 +112,10 @@ Note: cài các plugin
 ```sh
 sudo npm install -g npm
 sudo npm update -g npm
+sudo npm install -g nodemon
 sudo npm install -g sass
 sudo npm install -g json-server
+sudo npm install -g firebase-tools
 ```
 #### Angular
 ```sh
