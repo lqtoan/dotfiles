@@ -149,6 +149,11 @@ Make pacman more fun
 >>Color<br>
 >>ILoveCandy
 
+### Slack
+```sh
+#2E3440,#2C3849,#5E81AC,#D8DEE9,#3B4252,#D8DEE9,#A3BE8C,#8FBCBB,#2E3440,#D8DEE9
+```
+
 ## Gallery
 
 ![21-10-06-221134_screenshot](https://user-images.githubusercontent.com/89382043/136232380-6cc88839-b2d2-46c2-bae3-a54e8cec98fc.jpg)<br>
