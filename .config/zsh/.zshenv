@@ -19,7 +19,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 # export IDEA_JDK=/opt/openjdk-bin-11
-# export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color 'fg:#979eab,query:#979eab,gutter:#3b4252,pointer:#e5e9f0,info:#ebcb8b,fg+:#e5e9f0,bg:#2e3440,bg+:#5e81ac,hl:#a3be8c,hl+:#a3be8c,border:#5e81ac'"
 export FZF_DEFAULT_COMMAND="find -L"
