@@ -23,3 +23,5 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color 'fg:#979eab,query:#979eab,gutter:#3b4252,pointer:#e5e9f0,info:#ebcb8b,fg+:#e5e9f0,bg:#2e3440,bg+:#5e81ac,hl:#a3be8c,hl+:#a3be8c,border:#5e81ac'"
 export FZF_DEFAULT_COMMAND="find -L"
+
+export NODE_OPTIONS="--max-old-space-size=8192"
