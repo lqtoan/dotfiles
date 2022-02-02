@@ -57,7 +57,7 @@ alias cl="clear"
 export BAT_THEME="base16"
 alias ls="exa -lgh --icons --group-directories-first"
 alias la="exa -lgha --icons --group-directories-first"
-alias htop='htop --sort-key=PERCENT_MEM'
+alias htop='sudo htop --sort-key=PERCENT_MEM'
 #KDE CONNECT
 alias start='kdeconnect-cli -l'
 alias share='kdeconnect-cli -n "Redmi Note 9S" --share'
