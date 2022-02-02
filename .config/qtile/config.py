@@ -254,7 +254,7 @@ screens = [
                 widget.TextBox(text = ' ', fontsize = 16, foreground = yellow),
                 widget.Volume(foreground = yellow),
                 widget.TextBox(text=' ', fontsize = 16, foreground = magenta),
-                widget.Battery(format = '{char}{percent:2.0%}W', foreground = magenta),
+                widget.Battery(format = '{char}{percent:2.0%}W', background = background, foreground = magenta),
                 widget.Clock(format = ' %a, %d/%m', foreground = orange),
                 widget.Clock(format=' %I:%M:%S %p', foreground = red),
                 widget.Systray(background = selection),
