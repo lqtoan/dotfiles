@@ -43,6 +43,7 @@ simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst ranger \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip \
 pulseaudio -D
 sudo pip install psutil
+sudo pip install pillow
 sudo pip install dbus-next
 ```
 Note: thêm ssh-key vào Github
