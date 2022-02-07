@@ -39,7 +39,7 @@ yay -S brave-bin visual-studio-code-bin postman-bin ibus-bamboo-git
 ```sh
 sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
 viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still \
-simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst \
+simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst ranger \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip \
 pulseaudio -D
 sudo pip install psutil
@@ -64,6 +64,8 @@ rm -R ~/.config/neofetch
 ln -sf ~/.dotfiles/.config/neofetch ~/.config/neofetch
 rm -R ~/.config/dunst
 ln -sf ~/.dotfiles/.config/dunst ~/.config/dunst
+rm -R ~/.config/ranger
+ln -sf ~/.dotfiles/.config/ranger ~/.config/ranger
 ln -sf ~/.dotfiles/Pictures/Wallpapers ~/Pictures/Wallpapers
 rm -R ~/.config/feh
 ln -sf ~/.dotfiles/.config/feh ~/.config/feh
