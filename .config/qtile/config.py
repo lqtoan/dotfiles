@@ -41,6 +41,7 @@ code = "code"
 office = "onlyoffice-desktopeditors"
 # office = "libreoffice"
 spotify = "spotify"
+slack = "slack"
 
 #colors
 background = "#2e3440"  # 0:background
@@ -91,7 +92,7 @@ keys = [
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch brave--browser-nightly"),
-    Key([mod], "s", lazy.spawn(spotify), desc="Launch spotify"),
+    Key([mod], "s", lazy.spawn(slack), desc="Launch slack"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(code), desc="Launch code editor"),
     Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
@@ -155,8 +156,8 @@ layout_conf = {
 layouts = [
     layout.Columns(**layout_conf),
     layout.Floating(**layout_conf),
+    layout.Bsp(**layout_conf, fair = False),
     # layout.MonadTall(**layout_conf),
-    # layout.Bsp(**layout_conf),
     # layout.Max(),
     # layout.Stack(num_stacks=2, autosplit='true', fair='true', **layout_conf),
     # layout.Matrix(),
