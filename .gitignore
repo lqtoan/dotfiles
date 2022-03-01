@@ -1,5 +1,5 @@
 .config/qtile/__pycache__
 .config/nvim/bundle
 .config/zsh/.oh-my-zsh
-.config/zsh/.zcompdump-arch-5.8
+.config/zsh/.zcompdump-arch-*
 .config/zsh/.zsh_history
