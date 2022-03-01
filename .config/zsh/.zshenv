@@ -25,3 +25,6 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color 'fg:#979
 export FZF_DEFAULT_COMMAND="find -L"
 
 export NODE_OPTIONS="--max-old-space-size=8192"
+export ASPNETCORE_ENVIRONMENT=Development
+export DOTNET_ROOT=/opt/dotnet
+export MSBuildSDKsPath=$( echo /usr/share/dotnet/sdk/3.*/Sdks )
