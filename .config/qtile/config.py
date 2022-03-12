@@ -41,7 +41,7 @@ code = "code"
 office = "onlyoffice-desktopeditors"
 # office = "libreoffice"
 spotify = "spotify"
-slack = "slack"
+# slack = "slack"
 
 #colors
 background = "#2e3440"  # 0:background
@@ -92,7 +92,7 @@ keys = [
     # lauch
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "e", lazy.spawn(browser), desc="Launch brave--browser-nightly"),
-    Key([mod], "s", lazy.spawn(slack), desc="Launch slack"),
+    Key([mod], "s", lazy.spawn(spotify), desc="Launch slack"),
     Key([mod, "control", "shift"], "r", lazy.spawn(record), desc="Launch simple screen record"),
     Key([mod], "c", lazy.spawn(code), desc="Launch code editor"),
     Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
@@ -131,7 +131,7 @@ keys = [
 #-----------GROUP                              #
 ################################################
 groups = [Group(i) for i in [
-    "1", "2", "3", "4", "5",
+    "  ", "  ", "  ", "  ", "  ",
 ]]
 
 for i, group in enumerate(groups):
@@ -187,16 +187,17 @@ screens = [
                 widget.Image(filename='~/Pictures/Wallpapers/signature.png', background = dark_blue),
                 widget.GroupBox(
                     font= "CaskaydiaCove Nerd Font",
-                    # padding = 3,
+                    padding = 2,
                     active = active,
                     inactive = inactive,
                     highlight_method = "line",
-                    borderwidth = 2,
+                    borderwidth = 3,
                     # rounded = 'false',
                     highlight_color = background,
                     this_current_screen_border = dark_blue,
                     urgent_alert_method = 'line',
-                    urgent_border = red
+                    urgent_border = red,
+                    hide_unused = True
                 ),
                 widget.CurrentLayoutIcon(scale = 0.5),
                 widget.Prompt(foreground = magenta),
@@ -256,7 +257,9 @@ screens = [
                 widget.Volume(foreground = yellow),
                 widget.TextBox(text=' ', fontsize = 16, foreground = magenta),
                 widget.Battery(format = '{char}{percent:2.0%}W', background = background, foreground = magenta),
+                widget.TextBox(text = ' ', fontsize = 16, foreground = orange),
                 widget.Clock(format = ' %a, %d/%m', foreground = orange),
+                widget.TextBox(text = ' ', fontsize = 16, foreground = red),
                 widget.Clock(format=' %I:%M:%S %p', foreground = red),
                 widget.Systray(background = selection),
                 # widget.QuickExit(),
