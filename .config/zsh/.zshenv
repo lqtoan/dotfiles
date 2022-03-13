@@ -1,5 +1,6 @@
 export EDITOR="nvim"
 export TERMINAL="kitty"
+export BROWSER="brave"
 
 # Some default config directories
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -20,11 +21,12 @@ export LESSHISTFILE="-"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 # export IDEA_JDK=/opt/openjdk-bin-11
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH="$PATH:$HOME/bin"
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color 'fg:#979eab,query:#979eab,gutter:#3b4252,pointer:#e5e9f0,info:#ebcb8b,fg+:#e5e9f0,bg:#2e3440,bg+:#5e81ac,hl:#a3be8c,hl+:#a3be8c,border:#5e81ac'"
 export FZF_DEFAULT_COMMAND="find -L"
 
 export NODE_OPTIONS="--max-old-space-size=8192"
-export ASPNETCORE_ENVIRONMENT=Development
-export DOTNET_ROOT=/opt/dotnet
-export MSBuildSDKsPath=$( echo /usr/share/dotnet/sdk/3.*/Sdks )
+# export ASPNETCORE_ENVIRONMENT=Development
+# export DOTNET_ROOT=/opt/dotnet
+# export MSBuildSDKsPath=$( echo /usr/share/dotnet/sdk/3.*/Sdks )

@@ -1,7 +1,8 @@
 # Adds ~/.local/bin and its subdirectories to $PATH. This will help you run scripts which are in these folders anywhere without writing whole path.
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
-sh ~/.config/feh/.fehbg
+# sh ~/.config/feh/.fehbg
+wal &
 picom -f &
 nm-applet &
 screenkey &
