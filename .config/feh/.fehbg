@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/toan/.dotfiles/Pictures/Wallpapers/raindrops-2_FHD.jpg' 
+feh --no-fehbg --bg-fill '/home/toan/Pictures/Wallpapers/slideshow/archlinux.jpg' '/home/toan/Pictures/Wallpapers/slideshow/ign-0005.jpg' '/home/toan/Pictures/Wallpapers/slideshow/wall.jpg' '/home/toan/Pictures/Wallpapers/slideshow/kittyboard-dark.jpg' '/home/toan/Pictures/Wallpapers/slideshow/audio-bunny.jpg' 
