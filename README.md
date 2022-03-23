@@ -11,7 +11,6 @@
 - Image Viewer: Viewnior
 - Video Viewer: Mpv
 - Kdeconnect
-- Postman
 - ...
 
 ## Installations
@@ -32,13 +31,13 @@ makepkg -si
 ### Install somethings
 ```sh
 yay -Syyy
-yay -S brave-bin visual-studio-code-bin ibus-bamboo-git
+yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git
 ```
 
 ### ... and somethings
 ```sh
 sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
-viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect libreoffice-still \
+viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect \
 simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst ranger zip \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip \
 pulseaudio -D
