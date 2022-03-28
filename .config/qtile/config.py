@@ -131,7 +131,7 @@ keys = [
 #-----------GROUP                              #
 ################################################
 groups = [Group(i) for i in [
-    "  ", "  ", "  ", "  ", "  ",
+    "1", "2", "3", "4", "5",
 ]]
 
 for i, group in enumerate(groups):
@@ -197,7 +197,7 @@ screens = [
                     this_current_screen_border = dark_blue,
                     urgent_alert_method = 'line',
                     urgent_border = red,
-                    hide_unused = True
+                    hide_unused = False
                 ),
                 widget.CurrentLayoutIcon(scale = 0.5),
                 widget.Prompt(foreground = magenta),
@@ -258,9 +258,9 @@ screens = [
                 widget.TextBox(text=' ', fontsize = 16, foreground = magenta),
                 widget.Battery(format = '{char}{percent:2.0%}W', background = background, foreground = magenta),
                 widget.TextBox(text = ' ', fontsize = 16, foreground = orange),
-                widget.Clock(format = ' %a, %d/%m', foreground = orange),
+                widget.Clock(format = '%a, %d/%m', foreground = orange),
                 widget.TextBox(text = ' ', fontsize = 16, foreground = red),
-                widget.Clock(format=' %I:%M:%S %p', foreground = red),
+                widget.Clock(format='%I:%M:%S %p', foreground = red),
                 widget.Systray(background = selection),
                 # widget.QuickExit(),
             ],
