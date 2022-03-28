@@ -131,6 +131,19 @@ sudo systemctl enable postgresql
 sudo systemctl start postgresql
 postgres --version
 ```
+#### MariaDB
+```sh
+sudo pacman -S mariadb
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+mysql --version
+sudo mysql -u root
+```
+>use mysql;<br>
+>set password for 'root'@'localhost' = password('YOUR_ROOT_PASSWORD_HERE');<br>
+>flush privileges;<br>
+>quit
        
 ### Spotify
 ```sh
