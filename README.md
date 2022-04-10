@@ -69,6 +69,7 @@ ln -sf ~/.dotfiles/.config/ranger ~/.config/ranger
 ln -sf ~/.dotfiles/Pictures/Wallpapers ~/Pictures/Wallpapers
 rm -R ~/.config/feh
 ln -sf ~/.dotfiles/.config/feh ~/.config/feh
+rm -R ~/.fonts
 ln -sf ~/.dotfiles/.fonts ~/.fonts
 fc-cache -fv
 mkdir ~/.themes
