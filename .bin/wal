@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+time=$1
+[ -z $time ] && time=2
+while : 
+do
+	feh --bg-fill ~/Pictures/Wallpapers/slideshow/ -z
+	sleep $time
+done
+
+exit 0
