@@ -31,13 +31,13 @@ makepkg -si
 ### Install somethings
 ```sh
 yay -Syyy
-yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git
+yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git yarn
 ```
 
 ### ... and somethings
 ```sh
-sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 \
-viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect \
+sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 iwd dhcpcd \
+viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect network-manager-applet \
 simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst ranger zip \
 pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip \
 pulseaudio -D
