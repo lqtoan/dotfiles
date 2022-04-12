@@ -42,6 +42,7 @@ office = "onlyoffice-desktopeditors"
 # office = "libreoffice"
 spotify = "spotify"
 # slack = "slack"
+postman = "postman"
 
 #colors
 background = "#2e3440"  # 0:background
@@ -97,6 +98,7 @@ keys = [
     Key([mod], "c", lazy.spawn(code), desc="Launch code editor"),
     Key([mod], "f", lazy.spawn(thunar), desc="Launch thunar"),
     Key([mod], "d", lazy.spawn(office), desc="Launch office"),
+    Key([mod, "shift"], "p", lazy.spawn(postman), desc="Launch postman"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
