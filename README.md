@@ -31,7 +31,7 @@ makepkg -si
 ### Install somethings
 ```sh
 yay -Syyy
-yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git yarn
+yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git yarn postman-bin
 ```
 
 ### ... and somethings
@@ -39,7 +39,7 @@ yay -S brave-bin visual-studio-code-bin onlyoffice-bin ibus-bamboo-git yarn
 sudo pacman -S thunar gvfs tumbler kitty neofetch feh lxappearance-gtk3 iwd dhcpcd \
 viewnior mpv fzf neovim xcape xclip nodejs npm htop kdeconnect network-manager-applet \
 simplescreenrecorder pacman-contrib ibus-pinyin zsh bat exa dunst ranger zip \
-pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip \
+pulseaudio-alsa pavucontrol playerctl brightnessctl openssh python-pip docker scrot \
 pulseaudio -D
 sudo pip install psutil
 sudo pip install pillow
