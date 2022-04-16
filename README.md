@@ -111,6 +111,13 @@ Note: cài các plugin
 >:PlugInstall
 
 ### Develop
+#### Docker
+```sh
+sudo pacman -S docker docker-compose
+sudo systemctl start docker.service                
+sudo systemctl enable docker.service
+ng --version
+```
 #### JavaScript
 ```sh
 sudo npm install -g npm
