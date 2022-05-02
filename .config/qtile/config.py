@@ -175,8 +175,8 @@ layouts = [
 #-----------WIDGET                             #
 ################################################
 widget_defaults = dict(
-    font = "Comic Sans MS",
-    fontsize = 12,
+    font = "Segoe UI",
+    fontsize = 11,
     padding = 2,
     background = background
 )
@@ -223,7 +223,7 @@ screens = [
                 ),
                 widget.TextBox(
                     text = '',
-                    fontsize = 17,
+                    fontsize = 16,
                     foreground = green,
                     mouse_callbacks = {
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify previous')
@@ -231,7 +231,7 @@ screens = [
                     ),
                 widget.TextBox(
                     text = '',
-                    fontsize = 17,
+                    fontsize = 16,
                     foreground = green,
                     mouse_callbacks = {
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify play-pause') 
@@ -239,7 +239,7 @@ screens = [
                     ),
                 widget.TextBox(
                     text = '',
-                    fontsize = 17,
+                    fontsize = 16,
                     foreground = green,
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn('playerctl --player spotify next')
@@ -297,6 +297,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
+    Match(wm_class='Pavucontrol'),  # GPG key password entry
 ])
 auto_fullscreen = True
 # auto_fullscreen = False

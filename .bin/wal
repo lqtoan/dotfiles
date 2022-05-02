@@ -1,11 +1,3 @@
 #!/bin/zsh
-
-time=$1
-[ -z $time ] && time=2
-while : 
-do
-	feh --bg-fill ~/Pictures/Wallpapers/slideshow/ -z
-	sleep $time
-done
-
+feh --bg-fill --no-fehbg ~/Pictures/Wallpapers/slideshow/tower-nord.jpg
 exit 0
