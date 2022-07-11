@@ -1,3 +1,3 @@
 #!/bin/zsh
-feh --bg-fill --no-fehbg ~/Pictures/Wallpapers/slideshow/tower-nord.jpg
+feh --bg-fill --no-fehbg ~/Pictures/Wallpapers/wallpaper.jpeg
 exit 0

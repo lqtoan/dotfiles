@@ -84,4 +84,4 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 
 clear
-date
+# date

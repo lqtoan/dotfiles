@@ -151,7 +151,7 @@ for i, group in enumerate(groups):
 layout_conf = { 
     "border_focus": blue,
     "border_normal": background,
-    "margin": 3,
+    "margin": 4,
     "border_width": 2
 }
 
@@ -266,11 +266,11 @@ screens = [
                 widget.Systray(background = selection),
                 # widget.QuickExit(),
             ],
-            24, margin = [0, 0, 3, 0],
+            24, margin = [0, 0, 4, 0],
         ),
-        bottom=bar.Gap(3),
-        left=bar.Gap(3),
-        right=bar.Gap(3),
+        bottom=bar.Gap(4),
+        left=bar.Gap(4),
+        right=bar.Gap(4),
     ),
 ]
 
