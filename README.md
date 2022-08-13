@@ -124,12 +124,11 @@ sudo npm install -g npm
 sudo npm update -g npm
 sudo npm install -g nodemon
 sudo npm install -g sass
-sudo npm install -g json-server
 sudo npm install -g firebase-tools
 ```
 #### Angular
 ```sh
-sudo npm install -g @angular/cli@11.2.7
+sudo npm install -g @angular/cli@
 ng --version
 ```
 #### PostgreSQL
@@ -152,21 +151,7 @@ sudo mysql -u root
 >set password for 'root'@'localhost' = password('YOUR_ROOT_PASSWORD_HERE');<br>
 >flush privileges;<br>
 >quit
-       
-### Spotify
-```sh
-yay -S spotify
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-yay -S spicetify-cli
-spicetify
-ln -sf ~/.dotfiles/.config/spicetify/Themes/SpicetifyDefault ~/.config/spicetify/Themes/SpicetifyDefault
-rm -R ~/.config/spicetify/Extensions
-ln -sf ~/.dotfiles/.config/spicetify/Extensions ~/.config/spicetify/Extensions
-spicetify backup apply enable-devtool
-spicetify config extensions fullAppDisplay.js
-spicetify apply
-```
+
 Make pacman more fun
 >sudo nvim /etc/pacman.conf
 >>Color<br>
